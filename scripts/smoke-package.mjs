@@ -20,7 +20,7 @@ const server = net.createServer();
 await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
 const port = server.address().port;
 await new Promise(resolve => server.close(resolve));
-let child, browser, closed = false, log = "";
+let child, browser, page, closed = false, log = "";
 async function closeWithin(action) {
   let timer;
   try {
@@ -30,7 +30,7 @@ async function closeWithin(action) {
 try {
   child = spawn(executablePath, [
     `--user-data=${profile}`, `--remote-debugging-port=${port}`, "--remote-debugging-address=127.0.0.1",
-    "--use-angle=swiftshader", "--enable-unsafe-swiftshader",
+    "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--disable-gpu-compositing", "--enable-logging=stderr",
   ], { windowsHide: true, stdio: ["ignore", "pipe", "pipe"], env: process.env });
   child.on("error", error => { log += error.message; closed = true; });
   child.on("exit", () => { closed = true; });
@@ -48,8 +48,12 @@ try {
   }
   assert.ok(endpoint, `Packaged app did not expose its test debugger in time.\n${log}`);
   browser = await chromium.connectOverCDP(endpoint);
+  const diagnosticSession = await browser.newBrowserCDPSession();
+  const system = await diagnosticSession.send("SystemInfo.getInfo");
+  console.log("Packaged GPU:", JSON.stringify({ devices: system.gpu.devices, features: system.gpu.featureStatus }));
+  await diagnosticSession.detach();
   const context = browser.contexts()[0];
-  let page = context.pages().find(p => p.url().startsWith("atlas://"));
+  page = context.pages().find(p => p.url().startsWith("atlas://"));
   if (!page) page = await context.waitForEvent("page", { timeout: 15000 });
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));
@@ -76,6 +80,11 @@ try {
   await page.screenshot({ path: path.join(artifacts, `package-smoke-${process.platform}-${process.arch}.png`) });
   assert.deepEqual(errors, []);
   console.log(`PASS: actual packaged ${process.platform}/${process.arch} launch, fonts, isolated IPC, persisted controls and WebGL terrain (${result.samples} pixels).`);
+} catch (error) {
+  console.error("Packaged app output:\n" + log);
+  await fs.writeFile(path.join(artifacts, `package-smoke-${process.platform}-${process.arch}.log`), log);
+  if (page) await page.screenshot({ path: path.join(artifacts, `package-smoke-${process.platform}-${process.arch}.png`) }).catch(() => {});
+  throw error;
 } finally {
   if (browser) {
     try { const cdp = await browser.newBrowserCDPSession(); await closeWithin(() => cdp.send("Browser.close")); } catch {}

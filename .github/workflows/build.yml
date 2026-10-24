@@ -107,6 +107,8 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: diagnostics-${{ matrix.platform }}
-          path: artifacts/package-smoke-*.png
+          path: |
+            artifacts/package-smoke-*.png
+            artifacts/package-smoke-*.log
           if-no-files-found: ignore
           retention-days: 7
