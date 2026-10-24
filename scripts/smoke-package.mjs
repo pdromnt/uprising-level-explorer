@@ -30,7 +30,8 @@ async function closeWithin(action) {
 try {
   child = spawn(executablePath, [
     `--user-data=${profile}`, `--remote-debugging-port=${port}`, "--remote-debugging-address=127.0.0.1",
-    "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--disable-gpu-compositing", "--enable-logging=stderr",
+    "--use-gl=angle", `--use-angle=${process.platform === "darwin" ? "metal" : "swiftshader"}`,
+    "--enable-unsafe-swiftshader", "--disable-gpu-compositing", "--enable-logging=stderr",
   ], { windowsHide: true, stdio: ["ignore", "pipe", "pipe"], env: process.env });
   child.on("error", error => { log += error.message; closed = true; });
   child.on("exit", () => { closed = true; });
