@@ -23,6 +23,8 @@ the actual portable EXE. The macOS job mounts the generated DMG read-only,
 checks the bundle's ARM64 binary and ad-hoc signature, then launches that app.
 The smoke test checks startup, fonts, sandboxed IPC, persisted controls and
 WebGL terrain without requiring or downloading a game installation.
+It selects native ANGLE/Metal on macOS and SwiftShader on Windows, without
+changing normal application startup. GPU diagnostics are retained on failure.
 
 Installed-map/corpus comparisons still require `UPRISING_TEST_ROOT` locally and
 report skips on CI. This is explicit: asset-free package verification does not
@@ -75,3 +77,17 @@ Windows binaries currently have no publisher certificate. macOS bundles are
 ad-hoc signed to validate the ARM64 runtime, without Developer ID signing or
 Apple notarization. These workflows do not imply a trusted publisher identity;
 downloaded apps may receive the OS's normal unsigned/unnotarized-app prompts.
+
+## Verified baseline
+
+On 2026-10-23, [run 40053785918](https://github.com/pdromnt/uprising-level-explorer/actions/runs/40053785918)
+passed both jobs at commit `02fd626adf5a5e80854dc8686736156e978e6a0c`.
+Windows launched the actual portable EXE using SwiftShader; macOS mounted the
+DMG, verified the ARM64 bundle and launched it with native Metal. Both checked
+69,700 terrain pixels without neighboring-tile contamination, along with app
+startup, fonts, sandboxed IPC and preference persistence. Both distributable
+artifacts and checksum sidecars were uploaded successfully.
+
+The release workflow was checked with `actionlint`; no tag or GitHub release was
+created during setup. The full installed-game corpus remains a separate local
+check, as described above.

@@ -2,10 +2,10 @@
 
 ## Setup
 
-Use Node.js 24 or newer and npm. Windows x64 is the validated desktop platform.
-The rendering stack uses Electron and WebGL2. CI targets Windows x64 and macOS
-ARM64 only; Linux and Intel Mac packaging are unsupported. No game executable or native compiler is needed to
-run the viewer.
+Use Node.js 24 or newer and npm. CI validates Windows x64 and macOS ARM64
+packages; the full installed-game corpus was checked on Windows. The rendering
+stack uses Electron and WebGL2. Linux and Intel Mac packaging are unsupported.
+No game executable or native compiler is needed to run the viewer.
 
 ```powershell
 npm ci

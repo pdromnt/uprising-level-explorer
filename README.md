@@ -1,11 +1,13 @@
 # Uprising Level Explorer
 
+[![Desktop builds](https://github.com/pdromnt/uprising-level-explorer/actions/workflows/build.yml/badge.svg)](https://github.com/pdromnt/uprising-level-explorer/actions/workflows/build.yml)
+
 A read-only desktop viewer for **Uprising: Join or Die**. Explore the terrain,
 units, buildings, paths and environment of a level, then inspect its briefing
 and script without launching a mission or changing game files.
 
-Built with Electron, TypeScript and Three.js/WebGL2. **Windows x64 is currently
-validated.** The viewer uses your existing game installation; maps and models
+Built with Electron, TypeScript and Three.js/WebGL2. **Windows x64 and macOS ARM64
+packages are verified in CI.** The viewer uses your existing game installation; maps and models
 are not bundled. UI fonts and the application icon are bundled separately.
 
 ## Features
