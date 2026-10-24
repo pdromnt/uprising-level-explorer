@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+*.png binary
+*.ico binary
+*.icns binary
+*.ttf binary
+*.TTF binary
+
+# Preserve the verbatim third-party license notice.
+public/fonts/LICENSE-Liberation.txt -whitespace

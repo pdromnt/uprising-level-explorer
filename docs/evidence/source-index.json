@@ -1,0 +1,453 @@
+{
+  "commit": "ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644",
+  "sources": [
+    {
+      "key": "resources",
+      "path": "source/game/application_services.c",
+      "symbol": "int game_application_load_blob(",
+      "line": 76,
+      "sha256": "a4f86640d3f9e916bdbfb72c1486f2a149f96455720c17424ca0596d85f4aa3c",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/application_services.c#L76"
+    },
+    {
+      "key": "archive-index",
+      "path": "source/core/resource_index.c",
+      "symbol": "ResourceIndexStatus resource_index_read_record(",
+      "line": 16,
+      "sha256": "d226abc618b10df1e1c1a5359f0be9548fdb571e7d94df60529d7fe9f2d54b68",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/resource_index.c#L16"
+    },
+    {
+      "key": "archive-payload",
+      "path": "source/core/resource_archive.c",
+      "symbol": "ResourceLoadResult resource_archive_load(",
+      "line": 21,
+      "sha256": "a816824906b33d042668838c472165bfb74c4021dd37a08b2120f14fb49687c1",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/resource_archive.c#L21"
+    },
+    {
+      "key": "rle",
+      "path": "source/core/resource_payload.c",
+      "symbol": "ResourcePayloadStatus resource_payload_decode_rle(",
+      "line": 4,
+      "sha256": "bc7929bd36b089a9aa31357b8e6b2c7f9a00045f24cfb7eb038958fcaf418294",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/resource_payload.c#L4"
+    },
+    {
+      "key": "host-paths",
+      "path": "source/core/host_file.c",
+      "symbol": "int host_file_path(",
+      "line": 14,
+      "sha256": "41b85b140a43df01cfce2a11d78cf92286603110eb10fb77fb15425cdf8479c4",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/host_file.c#L14"
+    },
+    {
+      "key": "mission-settings",
+      "path": "source/game/level_settings.c",
+      "symbol": "int game_level_settings_line(",
+      "line": 84,
+      "sha256": "6caa8004a83475d9bf6a96890797af4edda96b6ad1509f69b4a9c311e9ef3a3b",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_settings.c#L84"
+    },
+    {
+      "key": "startup",
+      "path": "source/game/level_startup.c",
+      "symbol": "int game_level_startup(",
+      "line": 155,
+      "sha256": "2b7a75862d0419aa09237a807007c3a668d0e16af9361904fbfb3875829c7578",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_startup.c#L155"
+    },
+    {
+      "key": "load-order",
+      "path": "source/game/level_load.c",
+      "symbol": "static int stage(",
+      "line": 89,
+      "sha256": "a42fd4d8fbf55bee956d98d1198309ecad10054d09b1f1cb2548a6e326c5375e",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_load.c#L89"
+    },
+    {
+      "key": "manifest",
+      "path": "source/core/level_manifest.c",
+      "symbol": "int level_manifest_read(",
+      "line": 6,
+      "sha256": "36f91deadfbb366962083155b075fc5cdb4039f14ca80fa195227e3caa48f0e8",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/level_manifest.c#L6"
+    },
+    {
+      "key": "terrain-file",
+      "path": "source/core/level_terrain.c",
+      "symbol": "int level_terrain_load(",
+      "line": 19,
+      "sha256": "36b79b55e1f763109887f5a8438a859c8a6f75347edca5a26b3dbbbee89ceb30",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/level_terrain.c#L19"
+    },
+    {
+      "key": "terrain-tiles",
+      "path": "source/game/level_terrain_runtime.c",
+      "symbol": "static int terrain_tiles(",
+      "line": 20,
+      "sha256": "4428ffe20f61585522738fd2660cdf221836bb243067473a30dd93ea0c5a66f8",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_terrain_runtime.c#L20"
+    },
+    {
+      "key": "terrain-decoder",
+      "path": "source/core/terrain_asset.c",
+      "symbol": "int terrain_asset_decode(",
+      "line": 35,
+      "sha256": "5219694073a43b390c0500cdbd303961175fe6da6c013694ba1b30e8bf5d9b30",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/terrain_asset.c#L35"
+    },
+    {
+      "key": "terrain-uv",
+      "path": "source/core/gameplay_geometry.c",
+      "symbol": "void gameplay_geometry_terrain_triangles(",
+      "line": 377,
+      "sha256": "f60f56e3039c35d86f8f77669eb0edc1862daff58791a6a07ef9f8de74081e6f",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/gameplay_geometry.c#L377"
+    },
+    {
+      "key": "terrain-height",
+      "path": "source/core/gameplay_geometry.c",
+      "symbol": "long double gameplay_geometry_terrain_height(",
+      "line": 1280,
+      "sha256": "f60f56e3039c35d86f8f77669eb0edc1862daff58791a6a07ef9f8de74081e6f",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/gameplay_geometry.c#L1280"
+    },
+    {
+      "key": "terrain-draw",
+      "path": "source/core/gameplay_geometry.c",
+      "symbol": "static int world_emit_cell(",
+      "line": 1557,
+      "sha256": "f60f56e3039c35d86f8f77669eb0edc1862daff58791a6a07ef9f8de74081e6f",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/gameplay_geometry.c#L1557"
+    },
+    {
+      "key": "terrain-depth",
+      "path": "source/game/level_terrain_depth.c",
+      "symbol": "int game_level_terrain_depth_begin(",
+      "line": 82,
+      "sha256": "9c3394a50cb17aa735d6a2d00839827019a91a7766c8e6f5f5f06ef371e899c5",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_terrain_depth.c#L82"
+    },
+    {
+      "key": "tile-pixels",
+      "path": "source/core/asset_texture.c",
+      "symbol": "int asset_texture_terrain_tile(",
+      "line": 132,
+      "sha256": "c42ac688ef9d1e64aaa50a691b26d86153cd2096ef6132feadd4d096441e4489",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/asset_texture.c#L132"
+    },
+    {
+      "key": "bitmap",
+      "path": "source/core/asset_texture.c",
+      "symbol": "int asset_texture_bitmap(",
+      "line": 66,
+      "sha256": "c42ac688ef9d1e64aaa50a691b26d86153cd2096ef6132feadd4d096441e4489",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/asset_texture.c#L66"
+    },
+    {
+      "key": "palette",
+      "path": "source/game/level_transition_assets.c",
+      "symbol": "int game_level_palette_load(",
+      "line": 15,
+      "sha256": "ae061b13ecddff344ef2ec78a5d9172cf2f80a1ac119f6f04a5710fef622b746",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_transition_assets.c#L15"
+    },
+    {
+      "key": "sky",
+      "path": "source/platform/portable_gl1_sky.inc",
+      "symbol": "static void gl1_sky_select(",
+      "line": 49,
+      "sha256": "c680cf5355f41d5637aaeb8c6cb5d83c3bec99c65dfc0d965e4091c8f00b1029",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/platform/portable_gl1_sky.inc#L49"
+    },
+    {
+      "key": "world",
+      "path": "source/game/level_world_surface.c",
+      "symbol": "int game_level_world_surface_draw(",
+      "line": 85,
+      "sha256": "79a722a9137b768e8a6281f6387bb646833fc89aa73c3cb85dc4fddda3c7cf40",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_world_surface.c#L85"
+    },
+    {
+      "key": "render",
+      "path": "source/game/level_world_render.c",
+      "symbol": "int game_level_world_render(",
+      "line": 53,
+      "sha256": "0461b253ec0a709ae0dd23ae3e7b8f3d2ab2fe771b4c40a0400c31b0f90cbd37",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_world_render.c#L53"
+    },
+    {
+      "key": "scene-collection",
+      "path": "source/game/level_scene_render.c",
+      "symbol": "int game_level_world_present(",
+      "line": 568,
+      "sha256": "fa60d0a3c5f1d17f967e934ba304b5380a2f0639dd82b03acf201ee7896d9c25",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_scene_render.c#L568"
+    },
+    {
+      "key": "model-submission",
+      "path": "source/game/model_submission.c",
+      "symbol": "int game_model_graph_update(",
+      "line": 103,
+      "sha256": "f4ad4638e17f56ef343abcec962ea0ce162cf8b53d9eaa99fcda7fcbb9245946",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/model_submission.c#L103"
+    },
+    {
+      "key": "scene-submission",
+      "path": "source/core/scene_submission.c",
+      "symbol": "int scene_submission_owned(",
+      "line": 356,
+      "sha256": "66a463e1bb0161f9f9de86d5d2a42cfedeb75517468210763c95ea60d0b603d5",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/scene_submission.c#L356"
+    },
+    {
+      "key": "world-submission",
+      "path": "source/core/world_renderer.c",
+      "symbol": "int world_renderer_submit_owned(",
+      "line": 223,
+      "sha256": "65e6c54eb755017d3dfe709086d6589f8a4d777b756fe0ecba65dc27870a893a",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/world_renderer.c#L223"
+    },
+    {
+      "key": "mesh",
+      "path": "source/core/asset_mesh.c",
+      "symbol": "int asset_mesh_read(",
+      "line": 18,
+      "sha256": "ab9f8cbacf4898052830e38cd32dd387ca251b800133f732a8840c8912a43d06",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/asset_mesh.c#L18"
+    },
+    {
+      "key": "bdm",
+      "path": "source/core/asset_mesh.c",
+      "symbol": "int asset_model_read_format(",
+      "line": 81,
+      "sha256": "ab9f8cbacf4898052830e38cd32dd387ca251b800133f732a8840c8912a43d06",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/asset_mesh.c#L81"
+    },
+    {
+      "key": "model-load",
+      "path": "source/core/scene_asset_loader.c",
+      "symbol": "int scene_asset_load(",
+      "line": 236,
+      "sha256": "176c294c9f206e2f9536474684764ee33a9d7f9563d910086e7004a7b8c1b945",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/scene_asset_loader.c#L236"
+    },
+    {
+      "key": "model-fallback",
+      "path": "source/game/model_assets.c",
+      "symbol": "int game_model_definition_read(",
+      "line": 136,
+      "sha256": "9a88afafaf773b6eb2fe4c1e0eb0a1dacba95893e1471e9d7757291c2a967023",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/model_assets.c#L136"
+    },
+    {
+      "key": "model-materials",
+      "path": "source/game/model_assets.c",
+      "symbol": "GameAddress game_model_mesh_project(",
+      "line": 348,
+      "sha256": "9a88afafaf773b6eb2fe4c1e0eb0a1dacba95893e1471e9d7757291c2a967023",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/model_assets.c#L348"
+    },
+    {
+      "key": "text-model",
+      "path": "source/game/model_assets.c",
+      "symbol": "int game_model_text_definition_load(",
+      "line": 721,
+      "sha256": "9a88afafaf773b6eb2fe4c1e0eb0a1dacba95893e1471e9d7757291c2a967023",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/model_assets.c#L721"
+    },
+    {
+      "key": "sdf",
+      "path": "source/core/asset_sdf.c",
+      "symbol": "int asset_sdf_read(",
+      "line": 138,
+      "sha256": "1ded76939648c71c6920e4c9f99efc17a1d4cb97ed60cb5ff97587484c92180c",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/asset_sdf.c#L138"
+    },
+    {
+      "key": "scene",
+      "path": "source/core/scene_model.c",
+      "symbol": "int scene_model_take(",
+      "line": 228,
+      "sha256": "166c276fd7724b6f379664432e6f67361093f0c09665172ea23607ebdb59b79e",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/scene_model.c#L228"
+    },
+    {
+      "key": "object-parser",
+      "path": "source/core/level_objects.c",
+      "symbol": "int level_objects_load(",
+      "line": 29,
+      "sha256": "966a9ff55c4e49ae7265d7357b4210aee5cff65f14bdbd398c7a2d20a1c14a85",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/level_objects.c#L29"
+    },
+    {
+      "key": "object-placement",
+      "path": "source/game/level_objects.c",
+      "symbol": "static int construct(",
+      "line": 28,
+      "sha256": "3fbf9dac0c8e127c63b12274574d24a97e5a02160a43f32ed44890fda2ba4369",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_objects.c#L28"
+    },
+    {
+      "key": "factory",
+      "path": "source/game/level_factory.c",
+      "symbol": "static GameAddress operation(",
+      "line": 509,
+      "sha256": "d45e0bae9c67ba09203987ff68afd5e20525e6aa8f07cb13f46a5c414200ebc4",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_factory.c#L509"
+    },
+    {
+      "key": "catalog",
+      "path": "source/game/level_player_catalog.c",
+      "symbol": "int game_level_player_catalog_value(",
+      "line": 70,
+      "sha256": "721add9b1069897db3d8ab3b7d43f35cd617ad5aa4aa11613db9c528efcc965c",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_player_catalog.c#L70"
+    },
+    {
+      "key": "catalog-record",
+      "path": "source/core/gameplay_catalog.c",
+      "symbol": "uint32_t gameplay_catalog_value(",
+      "line": 292,
+      "sha256": "3c85aa4470d0dead7353e9b313934f1f86f1a4f2b1a477b466dc11c08f36f6dd",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/gameplay_catalog.c#L292"
+    },
+    {
+      "key": "vehicle-family",
+      "path": "source/core/vehicle_presentation.c",
+      "symbol": "const VehiclePresentationFamily *vehicle_presentation_family(",
+      "line": 124,
+      "sha256": "d3905aefe70a5591963f0d29ed646cd092e82feefd63e7e0a8b4ef7b3e144898",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/vehicle_presentation.c#L124"
+    },
+    {
+      "key": "building-family",
+      "path": "source/core/presentation_state_copy.c",
+      "symbol": "static const GamePresentationFactoryFamily presentation_families[]=",
+      "line": 179,
+      "sha256": "2db462ec0a5f9c69bc9d70d22c1d368fbc0de9c38bbfd31d6fbc0008fbb3a979",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/presentation_state_copy.c#L179"
+    },
+    {
+      "key": "player-model",
+      "path": "source/game/level_player_factory.c",
+      "symbol": "static int definition_read(",
+      "line": 70,
+      "sha256": "235e855ec9d5f6edc14f839664f59f8be252e3223bc8be16a70c73bdfa520965",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_player_factory.c#L70"
+    },
+    {
+      "key": "slot-parser",
+      "path": "source/core/level_player_slots.c",
+      "symbol": "int level_player_slots_load(",
+      "line": 33,
+      "sha256": "5d7fa585acccf0aee30a15bcc53e2efcc64e7d25d909f0009ba25fed043521d6",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/level_player_slots.c#L33"
+    },
+    {
+      "key": "citadel-parser",
+      "path": "source/core/level_citadels.c",
+      "symbol": "int level_citadels_load(",
+      "line": 182,
+      "sha256": "39bf444eff2b4844ce5573b06a20cda4e58124908ac6d68b9e182e0bbe738a49",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/level_citadels.c#L182"
+    },
+    {
+      "key": "citadel-placement",
+      "path": "source/game/level_citadel.c",
+      "symbol": "static int construct(",
+      "line": 169,
+      "sha256": "169fe9e98dc52126a1db27f3c3e655ca73ff259e5a376f88dd5a9f5424939887",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_citadel.c#L169"
+    },
+    {
+      "key": "path-parser",
+      "path": "source/core/level_movement_paths.c",
+      "symbol": "int level_movement_paths_load(",
+      "line": 23,
+      "sha256": "bfe04430a9f300583dadf6c76af7cca6946c0fc065681158fe62ed72de984174",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/level_movement_paths.c#L23"
+    },
+    {
+      "key": "path-placement",
+      "path": "source/game/level_routes.c",
+      "symbol": "static int construct(",
+      "line": 125,
+      "sha256": "ffc6616846aed2971e913912cee2c948b88a3aebe83711e9dd1256a0f6c0df70",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_routes.c#L125"
+    },
+    {
+      "key": "teleporter-parser",
+      "path": "source/core/level_teleporters.c",
+      "symbol": "int level_teleporters_load(",
+      "line": 32,
+      "sha256": "f9624762bb3003360654a93c9af534d067cb2963a1eb83cafd5127af10f9e379",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/core/level_teleporters.c#L32"
+    },
+    {
+      "key": "teleporter-placement",
+      "path": "source/game/level_teleport.c",
+      "symbol": "static int construct(",
+      "line": 157,
+      "sha256": "ef87ba8c8abafd101711ad5d817fbce0b3409df29f254d0a0a25b73d15f0952c",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_teleport.c#L157"
+    },
+    {
+      "key": "script-load",
+      "path": "source/game/level_script.c",
+      "symbol": "int game_level_script_load_path(",
+      "line": 200,
+      "sha256": "f7a8cf17a9b59ca9ac84527be8ddfacd6efa52133f8a131d15125dfe14e52fbf",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_script.c#L200"
+    },
+    {
+      "key": "script-lexer",
+      "path": "source/game/level_script.c",
+      "symbol": "int game_script_next(",
+      "line": 56,
+      "sha256": "f7a8cf17a9b59ca9ac84527be8ddfacd6efa52133f8a131d15125dfe14e52fbf",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_script.c#L56"
+    },
+    {
+      "key": "script-location",
+      "path": "source/game/level_script.c",
+      "symbol": "static int spatial_point_parse(",
+      "line": 926,
+      "sha256": "f7a8cf17a9b59ca9ac84527be8ddfacd6efa52133f8a131d15125dfe14e52fbf",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_script.c#L926"
+    },
+    {
+      "key": "script-types",
+      "path": "source/game/level_script.c",
+      "symbol": "static int script_unit_kind(",
+      "line": 1110,
+      "sha256": "f7a8cf17a9b59ca9ac84527be8ddfacd6efa52133f8a131d15125dfe14e52fbf",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_script.c#L1110"
+    },
+    {
+      "key": "briefing",
+      "path": "source/game/level_selection.c",
+      "symbol": "int game_level_description_load(",
+      "line": 159,
+      "sha256": "3640fc527ceb9f5176a6fcd667c561d2cb3cffafbf1f3868c3c97a0cd9f568a6",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_selection.c#L159"
+    },
+    {
+      "key": "campaign-text",
+      "path": "source/game/campaign_catalog.c",
+      "symbol": "static int mission_metadata(",
+      "line": 84,
+      "sha256": "a276ba1cf007126858a9c9136f5f413cd797349337036ad49ddc24d940c727c9",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/campaign_catalog.c#L84"
+    },
+    {
+      "key": "overview",
+      "path": "source/game/level_geometry.c",
+      "symbol": "static int overview_image(",
+      "line": 62,
+      "sha256": "79388a0d3832e85e9fcff1995b84dc9b498ae3091e22e4aecee0cd77b30b491e",
+      "url": "https://github.com/pdromnt/uprising_decomp/blob/ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644/source/game/level_geometry.c#L62"
+    }
+  ]
+}

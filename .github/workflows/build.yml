@@ -1,0 +1,112 @@
+name: Desktop builds
+
+on:
+  push:
+    branches: ['**']
+    paths-ignore: ['**/*.md']
+  pull_request:
+    paths-ignore: ['**/*.md']
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      source_ref:
+        type: string
+        required: true
+      package_version:
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-${{ github.workflow }}-${{ github.ref }}-${{ inputs.source_ref || github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: ${{ matrix.platform }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: windows-x64
+            runner: windows-2022
+            os: win32
+            arch: x64
+          - platform: macos-arm64
+            runner: macos-15
+            os: darwin
+            arch: arm64
+    env:
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      PACKAGE_VERSION: ${{ inputs.package_version }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.source_ref || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Verify native runner architecture
+        env:
+          EXPECTED_OS: ${{ matrix.os }}
+          EXPECTED_ARCH: ${{ matrix.arch }}
+        run: node -e "require('node:assert/strict').equal(process.platform + '/' + process.arch, process.env.EXPECTED_OS + '/' + process.env.EXPECTED_ARCH)"
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Run asset-free tests
+        run: npm test
+      - name: Build distributable
+        run: npm run package
+      - name: Launch actual Windows portable EXE
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $files=@(Get-ChildItem releases/distribution/*-windows-x64-portable.exe)
+          if($files.Count -ne 1){throw 'Expected one portable executable'}
+          $env:UPRISING_TEST_EXE=$files[0].FullName
+          npm run test:package
+          if($LASTEXITCODE){throw 'Portable executable smoke test failed'}
+      - name: Mount and launch actual ARM64 DMG
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          set -euo pipefail
+          images=(releases/distribution/*-macos-arm64.dmg)
+          [ "${#images[@]}" -eq 1 ]
+          mount="$RUNNER_TEMP/uprising-level-explorer-dmg"
+          mkdir -p "$mount"
+          hdiutil attach "${images[0]}" -readonly -nobrowse -mountpoint "$mount"
+          trap 'hdiutil detach "$mount"' EXIT
+          app="$mount/Uprising Level Explorer.app"
+          executable="$app/Contents/MacOS/Uprising Level Explorer"
+          file "$executable" | grep -q arm64
+          codesign --verify --deep --strict "$app"
+          UPRISING_TEST_EXE="$executable" npm run test:package
+      - name: Record source provenance
+        shell: bash
+        run: |
+          git rev-parse HEAD > releases/distribution/source-${{ matrix.platform }}.txt
+      - uses: actions/upload-artifact@v7
+        with:
+          name: runtime-${{ matrix.platform }}
+          path: |
+            releases/distribution/*.exe
+            releases/distribution/*.dmg
+            releases/distribution/*.sha256
+            releases/distribution/source-*.txt
+          if-no-files-found: error
+          retention-days: 7
+      - name: Save smoke diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: diagnostics-${{ matrix.platform }}
+          path: artifacts/package-smoke-*.png
+          if-no-files-found: ignore
+          retention-days: 7

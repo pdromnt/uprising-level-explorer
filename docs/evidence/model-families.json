@@ -1,0 +1,293 @@
+{
+  "commit": "ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644",
+  "scope": "declared label tables; final slot still depends on catalog and mission/player choices; not a complete factory inventory",
+  "families": [
+    {
+      "kind": 32,
+      "format": 2,
+      "names_table": "5846d4",
+      "labels": [
+        "ppt1"
+      ],
+      "scope": "primary label sample only; not the entire 15-slot player pool"
+    },
+    {
+      "kind": 33,
+      "format": 2,
+      "names_table": "5846d8",
+      "labels": [
+        "pst1",
+        "ist1",
+        "rst1",
+        "pst2",
+        "ist2",
+        "pst3",
+        "ist3",
+        "pst4",
+        "ist4",
+        "pst5",
+        "ist5"
+      ]
+    },
+    {
+      "kind": 34,
+      "format": 2,
+      "names_table": "5848c8",
+      "labels": [
+        "ptt1",
+        "itt1"
+      ]
+    },
+    {
+      "kind": 35,
+      "format": 2,
+      "names_table": "5848c0",
+      "labels": [
+        "pcy1",
+        "icy1"
+      ]
+    },
+    {
+      "kind": 36,
+      "format": 2,
+      "names_table": "5848d0",
+      "labels": [
+        "psm1",
+        "ism1",
+        "rsm1"
+      ]
+    },
+    {
+      "kind": 37,
+      "format": 2,
+      "names_table": "5848dc",
+      "labels": [
+        "rlt1"
+      ]
+    },
+    {
+      "kind": 38,
+      "format": 0,
+      "names_table": "584708",
+      "labels": [
+        "pbm1",
+        "ibm1",
+        "rbm1",
+        "pbm2",
+        "ibm2",
+        "pbm3",
+        "ibm3",
+        "pbm4",
+        "ibm4",
+        "pbm5",
+        "ibm5"
+      ]
+    },
+    {
+      "kind": 39,
+      "format": 0,
+      "names_table": "584738",
+      "labels": [
+        "pav1",
+        "iav1",
+        "rav1",
+        "pav2",
+        "iav2",
+        "pav3",
+        "iav3",
+        "pav4",
+        "iav4",
+        "pav5",
+        "iav5"
+      ]
+    },
+    {
+      "kind": 40,
+      "format": 2,
+      "names_table": "5848e0",
+      "labels": [
+        "rht1"
+      ]
+    },
+    {
+      "kind": 41,
+      "format": 0,
+      "names_table": "584768",
+      "labels": [
+        "pcv2",
+        "pcv3",
+        "pcv1",
+        "pcv4"
+      ]
+    },
+    {
+      "kind": 96,
+      "format": 1,
+      "names_table": "58477c",
+      "labels": [
+        "rib1"
+      ]
+    },
+    {
+      "kind": 98,
+      "format": 1,
+      "names_table": "584784",
+      "labels": [
+        "rab1"
+      ]
+    },
+    {
+      "kind": 99,
+      "format": 1,
+      "names_table": "584788",
+      "labels": [
+        "rtb1"
+      ]
+    },
+    {
+      "kind": 100,
+      "format": 1,
+      "names_table": "584780",
+      "labels": [
+        "rbb1"
+      ]
+    },
+    {
+      "kind": 119,
+      "format": 1,
+      "names_table": "584790",
+      "labels": [
+        "pir1",
+        "ptb1",
+        "rtc1",
+        "rpw1"
+      ]
+    },
+    {
+      "kind": 128,
+      "format": 1,
+      "names_table": "5847e0",
+      "labels": [
+        "pib1",
+        "iib1",
+        "pib2",
+        "iib2",
+        "pib3",
+        "iib3",
+        "pib4",
+        "iib4",
+        "pib5",
+        "iib5"
+      ]
+    },
+    {
+      "kind": 129,
+      "format": 1,
+      "names_table": "584808",
+      "labels": [
+        "ptb1",
+        "itb1",
+        "ptb2",
+        "itb2",
+        "ptb3",
+        "itb3",
+        "ptb4",
+        "itb4",
+        "ptb5",
+        "itb5"
+      ]
+    },
+    {
+      "kind": 130,
+      "format": 1,
+      "names_table": "584830",
+      "labels": [
+        "pab1",
+        "iab1",
+        "pab2",
+        "iab2",
+        "pab3",
+        "iab3",
+        "pab4",
+        "iab4",
+        "pab5",
+        "iab5"
+      ]
+    },
+    {
+      "kind": 131,
+      "format": 1,
+      "names_table": "584858",
+      "labels": [
+        "pbb1",
+        "ibb1",
+        "pbb2",
+        "ibb2",
+        "pbb3",
+        "ibb3",
+        "pbb4",
+        "ibb4",
+        "pbb5",
+        "ibb5"
+      ]
+    },
+    {
+      "kind": 132,
+      "format": 1,
+      "names_table": "584880",
+      "labels": [
+        "pir1",
+        "iir1"
+      ]
+    },
+    {
+      "kind": 133,
+      "format": 1,
+      "names_table": "584888",
+      "labels": [
+        "ptr1",
+        "itr1"
+      ]
+    },
+    {
+      "kind": 134,
+      "format": 1,
+      "names_table": "584890",
+      "labels": [
+        "par1",
+        "iar1"
+      ]
+    },
+    {
+      "kind": 135,
+      "format": 1,
+      "names_table": "584898",
+      "labels": [
+        "pbr1",
+        "ibr1"
+      ]
+    },
+    {
+      "kind": 176,
+      "format": 0,
+      "names_table": "5847a0",
+      "labels": [
+        "wt11",
+        "wb11",
+        "wr11",
+        "wr21",
+        "wr31",
+        "wcu1",
+        "wcu2",
+        "wt12",
+        "wgp1",
+        "wgp2",
+        "wsp1",
+        "wsp2",
+        "wig1",
+        "wse1",
+        "wse1"
+      ]
+    }
+  ]
+}

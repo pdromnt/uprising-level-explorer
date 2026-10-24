@@ -1,0 +1,8 @@
+{
+  "queries": 217,
+  "uv_cases": 3,
+  "mismatches": 0,
+  "source_commit": "c4eeb807724756394f47a21b11aff6be7ba837cf",
+  "catalog_source_commit": "c4eeb807724756394f47a21b11aff6be7ba837cf",
+  "scope": "Actual unit defaults/catalog queries and screen UV normalization with bounded memory I/O adapter; no game execution"
+}

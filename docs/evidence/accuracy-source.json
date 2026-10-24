@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-23",
+  "source_head_at_recording": "c33fa33d301b3db508bae45533b5dbd2fa0f5d70",
+  "source_is_live_and_may_be_dirty": true,
+  "files": {
+    "source/core/terrain_asset.c": "5219694073a43b390c0500cdbd303961175fe6da6c013694ba1b30e8bf5d9b30",
+    "source/core/gameplay_geometry.c": "f60f56e3039c35d86f8f77669eb0edc1862daff58791a6a07ef9f8de74081e6f",
+    "source/core/scene_submission.c": "66a463e1bb0161f9f9de86d5d2a42cfedeb75517468210763c95ea60d0b603d5",
+    "source/core/initial_numeric_records.inc": "d3a1782438c038ee53f96a9549b063f092dc9ace3def5747d61631695a84ef50",
+    "source/game/level_routes.c": "ffc6616846aed2971e913912cee2c948b88a3aebe83711e9dd1256a0f6c0df70",
+    "source/game/level_scene_render.c": "fa60d0a3c5f1d17f967e934ba304b5380a2f0639dd82b03acf201ee7896d9c25",
+    "source/game/level_vehicle_death.c": "17f5be9c0bfa4e81e70ab06362df3a2aae8bf875eff46e157f6c66a74dd2a01d",
+    "source/platform/portable_render_sky.inc": "7d81340cfbaea9633d8c536f7d3b6149a7f1219ff1e858a5c0c7659db59ae5f3",
+    "source/platform/portable_vk.inc": "02b3ec82a3635a8ce603b1f7e2feba8839261f4dff8249938f5d2da45e7e7d0f",
+    "source/platform/vulkan/projected.frag": "a4f26ebbc20acc1e94c97c272fdee2edefb9cea7a3ee8bee33f21d224fb903d0",
+    "source/platform/vulkan/projected.vert": "100ba3e79ad68511b1b5c071b855bb3648d83c65b49fa1ac45316c1b94531b77",
+    "source/core/vehicle_update.c": "2b098dffa8f0fa1c10f0d6fa389990b67f32d53fdd07c866da92caa9c51844d2",
+    "source/core/player_terrain_contact.c": "c23fa733d82e7b1a63186f6b3e89a7ac83e41f6952999734e9720ec38f49111c",
+    "source/game/level_vehicle_update.c": "d5f845455f93c1b09899f688d18a2cd5b6b1b25e84a298022570f034102d22fb"
+  },
+  "native_reference_executable_sha256": "649d138114525db389c9859b3f06aa92b081f1fba1e803078fbbe87fd06a9a57",
+  "native_reference_own_pid": 28720,
+  "native_reference_fog_rgba": [
+    0.82323736,
+    0.467877865,
+    0.19806169,
+    1
+  ],
+  "native_reference_fog_end": 20000,
+  "shadow_material_records": "0x624f08 first words zero; 0x624f38 first words zero; see camera-gdb.log",
+  "view": [
+    0.9999952912330627,
+    -0.0030679567717015743,
+    0.0,
+    -63387.98046875,
+    0.0030679567717015743,
+    0.9999952912330627,
+    0.0,
+    -576.0201416015625,
+    0.0,
+    0.0,
+    1.0,
+    -105814.3359375
+  ],
+  "projection": [
+    320.0,
+    240.0,
+    0.0,
+    0.0,
+    480.0,
+    640.0,
+    0.0,
+    0.0,
+    6.726232628759122e-43,
+    8.96831017167883e-43,
+    1.0,
+    381.3607482910156,
+    0.01148897036910057,
+    0.01148897036910057,
+    0.01148897036910057,
+    0.01148897036910057
+  ]
+}

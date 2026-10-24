@@ -1,0 +1,45 @@
+# Dependencies and generated application bundles
+/node_modules/
+/dist/
+/electron/
+/releases/
+/artifacts/
+/coverage/
+*.tsbuildinfo
+
+# Local installations, extracted game data and binary dumps
+/game/
+/game-assets/
+*.cln
+*.slk
+*.bdm
+*.sqc
+*.pak
+*.dph
+*.lfl
+*.cam
+*.exe
+*.dll
+*.pdb
+*.dmp
+
+# Local configuration, caches and research-tool output
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.bak
+.cache/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Editor and OS files
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
+Desktop.ini

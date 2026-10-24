@@ -1,0 +1,51 @@
+{
+  "owner_maps": [
+    [
+      246,
+      247,
+      246,
+      247
+    ],
+    [
+      165,
+      168,
+      165,
+      168
+    ],
+    [
+      82,
+      83,
+      82,
+      83
+    ],
+    [
+      10,
+      15,
+      10,
+      15
+    ],
+    [
+      251,
+      252,
+      251,
+      252
+    ],
+    [
+      148,
+      152,
+      148,
+      152
+    ],
+    [
+      10,
+      15,
+      10,
+      15
+    ]
+  ],
+  "primary_kind": 35,
+  "factory_slot": 1,
+  "payload": 4325376,
+  "source_commit": "c4eeb807724756394f47a21b11aff6be7ba837cf",
+  "scope": "Actual gameplay_state_apply_palette for seven default rows, and gameplay_group_primary_construct with captured factory ports. Does not verify campaign/network color assignment or full citadel activation."
+}

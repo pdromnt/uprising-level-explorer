@@ -1,0 +1,25 @@
+module.exports = {
+  appId: "io.github.pdromnt.uprising-level-explorer",
+  productName: "Uprising Level Explorer",
+  asar: true,
+  npmRebuild: false,
+  directories: { output: "releases/distribution" },
+  files: ["dist/**/*", "electron/**/*", "package.json", "THIRD_PARTY_NOTICES.md", "!**/*.map"],
+  publish: null,
+  win: {
+    target: [{ target: "portable", arch: ["x64"] }],
+    icon: "public/app-icon.ico",
+    artifactName: "Uprising-Level-Explorer-${version}-windows-x64-portable.${ext}",
+  },
+  portable: { requestExecutionLevel: "user" },
+  mac: {
+    target: [{ target: "dmg", arch: ["arm64"] }],
+    icon: "public/app-icon.icns",
+    category: "public.app-category.utilities",
+    identity: "-",
+    hardenedRuntime: false,
+    notarize: false,
+    artifactName: "Uprising-Level-Explorer-${version}-macos-arm64.${ext}",
+  },
+  dmg: { sign: false },
+};

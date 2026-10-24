@@ -1,0 +1,3501 @@
+{
+  "source_commit": "ebc7dbbed0ca9a97c33a4274c1c9b363b2f05644",
+  "compiler": "gcc (tdm64-1) 10.3.0",
+  "scope": "native parsing with inert construction callbacks; no gameplay/rendering validation",
+  "maps": [
+    {
+      "name": "anshar.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 320,
+      "slots": 5,
+      "citadels": 6,
+      "objects": 42,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 403705,
+      "height_min": 657,
+      "height_max": 8421,
+      "terrain_fnv_words": 3983592665,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "aranon.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 896,
+      "slots": 5,
+      "citadels": 5,
+      "objects": 65,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 414365,
+      "height_min": -10889,
+      "height_max": 7652,
+      "terrain_fnv_words": 3679760614,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Attila.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 924,
+      "slots": 5,
+      "citadels": 7,
+      "objects": 50,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 413888,
+      "height_min": -2066,
+      "height_max": 1238,
+      "terrain_fnv_words": 2879623203,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "BAAL.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 448,
+      "slots": 5,
+      "citadels": 7,
+      "objects": 17,
+      "routes": 9,
+      "teleporters": 0,
+      "end": 405529,
+      "height_min": -655,
+      "height_max": 4239,
+      "terrain_fnv_words": 864675358,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Centari.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 560,
+      "slots": 5,
+      "citadels": 5,
+      "objects": 61,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 408113,
+      "height_min": -11715,
+      "height_max": 1250,
+      "terrain_fnv_words": 2289577871,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "chaud.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 416,
+      "slots": 5,
+      "citadels": 6,
+      "objects": 58,
+      "routes": 17,
+      "teleporters": 0,
+      "end": 407084,
+      "height_min": -7913,
+      "height_max": 10651,
+      "terrain_fnv_words": 996405159,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "circus.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 4,
+      "slots": 4,
+      "citadels": 1,
+      "objects": 5,
+      "routes": 0,
+      "teleporters": 4,
+      "end": 395689,
+      "height_min": -4194,
+      "height_max": 4153,
+      "terrain_fnv_words": 199396054,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "dakka.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 257,
+      "slots": 5,
+      "citadels": 7,
+      "objects": 44,
+      "routes": 3,
+      "teleporters": 0,
+      "end": 403053,
+      "height_min": -6750,
+      "height_max": 15098,
+      "terrain_fnv_words": 2864710402,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Dinarou.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 384,
+      "slots": 5,
+      "citadels": 5,
+      "objects": 31,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 403781,
+      "height_min": -15099,
+      "height_max": 15098,
+      "terrain_fnv_words": 2540130733,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Erudara.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 432,
+      "slots": 5,
+      "citadels": 6,
+      "objects": 26,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 404454,
+      "height_min": -5453,
+      "height_max": 8733,
+      "terrain_fnv_words": 960193351,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "FENRIS.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 452,
+      "slots": 5,
+      "citadels": 9,
+      "objects": 44,
+      "routes": 60,
+      "teleporters": 8,
+      "end": 413204,
+      "height_min": -256,
+      "height_max": 7680,
+      "terrain_fnv_words": 2608550031,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "FIRBOLG.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 337,
+      "slots": 5,
+      "citadels": 3,
+      "objects": 187,
+      "routes": 18,
+      "teleporters": 1,
+      "end": 413776,
+      "height_min": -634,
+      "height_max": 6168,
+      "terrain_fnv_words": 1931078370,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "ghorvati.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 1079,
+      "slots": 3,
+      "citadels": 5,
+      "objects": 72,
+      "routes": 18,
+      "teleporters": 0,
+      "end": 418163,
+      "height_min": -3589,
+      "height_max": 13180,
+      "terrain_fnv_words": 2465783142,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "glac.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 480,
+      "slots": 5,
+      "citadels": 6,
+      "objects": 75,
+      "routes": 6,
+      "teleporters": 0,
+      "end": 408598,
+      "height_min": -123,
+      "height_max": 7511,
+      "terrain_fnv_words": 1399122172,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Keori.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 240,
+      "slots": 5,
+      "citadels": 9,
+      "objects": 0,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 400244,
+      "height_min": -841,
+      "height_max": 3502,
+      "terrain_fnv_words": 2857452248,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Moreska.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 472,
+      "slots": 5,
+      "citadels": 4,
+      "objects": 97,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 408535,
+      "height_min": -15854,
+      "height_max": 9124,
+      "terrain_fnv_words": 467251186,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Nan.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 476,
+      "slots": 5,
+      "citadels": 6,
+      "objects": 72,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 407722,
+      "height_min": -414,
+      "height_max": 14980,
+      "terrain_fnv_words": 908470118,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Nataselah.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 304,
+      "slots": 2,
+      "citadels": 10,
+      "objects": 62,
+      "routes": 7,
+      "teleporters": 4,
+      "end": 405396,
+      "height_min": -256,
+      "height_max": 5632,
+      "terrain_fnv_words": 719103777,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "NIFLHEIM.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 1029,
+      "slots": 5,
+      "citadels": 7,
+      "objects": 45,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 416034,
+      "height_min": 0,
+      "height_max": 8168,
+      "terrain_fnv_words": 2019582853,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "NOVUS.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 497,
+      "slots": 5,
+      "citadels": 7,
+      "objects": 73,
+      "routes": 0,
+      "teleporters": 2,
+      "end": 407932,
+      "height_min": -10,
+      "height_max": 14017,
+      "terrain_fnv_words": 410806112,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Priva.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 321,
+      "slots": 5,
+      "citadels": 5,
+      "objects": 23,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 402250,
+      "height_min": -11934,
+      "height_max": 15098,
+      "terrain_fnv_words": 1614621417,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "rhemorrah.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 368,
+      "slots": 5,
+      "citadels": 6,
+      "objects": 128,
+      "routes": 5,
+      "teleporters": 0,
+      "end": 409369,
+      "height_min": -157,
+      "height_max": 6220,
+      "terrain_fnv_words": 323408943,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "sahara.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 1090,
+      "slots": 5,
+      "citadels": 6,
+      "objects": 139,
+      "routes": 6,
+      "teleporters": 0,
+      "end": 421818,
+      "height_min": -3440,
+      "height_max": 10686,
+      "terrain_fnv_words": 195338954,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "SCINTILLAE.SLK",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 959,
+      "slots": 2,
+      "citadels": 1,
+      "objects": 66,
+      "routes": 4,
+      "teleporters": 2,
+      "end": 414724,
+      "height_min": -14211,
+      "height_max": 10299,
+      "terrain_fnv_words": 2942397783,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "solaris.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 1360,
+      "slots": 5,
+      "citadels": 4,
+      "objects": 99,
+      "routes": 9,
+      "teleporters": 0,
+      "end": 423860,
+      "height_min": -14254,
+      "height_max": 9518,
+      "terrain_fnv_words": 2544759273,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Terra.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 540,
+      "slots": 2,
+      "citadels": 7,
+      "objects": 93,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 409580,
+      "height_min": -663,
+      "height_max": 6285,
+      "terrain_fnv_words": 3852974201,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Training1.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 383,
+      "slots": 2,
+      "citadels": 1,
+      "objects": 25,
+      "routes": 4,
+      "teleporters": 0,
+      "end": 403211,
+      "height_min": -6187,
+      "height_max": 16741,
+      "terrain_fnv_words": 142217524,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Training2.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 527,
+      "slots": 2,
+      "citadels": 1,
+      "objects": 59,
+      "routes": 3,
+      "teleporters": 0,
+      "end": 407539,
+      "height_min": -9771,
+      "height_max": 10149,
+      "terrain_fnv_words": 2707367524,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Training3.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 288,
+      "slots": 2,
+      "citadels": 1,
+      "objects": 24,
+      "routes": 3,
+      "teleporters": 0,
+      "end": 401669,
+      "height_min": -11008,
+      "height_max": 16725,
+      "terrain_fnv_words": 2939953444,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    },
+    {
+      "name": "Tulgese.slk",
+      "exit_code": 0,
+      "width": 256,
+      "height": 256,
+      "tiles": 160,
+      "slots": 5,
+      "citadels": 9,
+      "objects": 0,
+      "routes": 0,
+      "teleporters": 0,
+      "end": 399257,
+      "height_min": -256,
+      "height_max": 5120,
+      "terrain_fnv_words": 2633686884,
+      "lighting_seed_start": 1,
+      "lighting_seed_end": 3833397249
+    }
+  ],
+  "models": [
+    {
+      "name": "models/alien.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6943,
+          "size": 6943,
+          "vertices": 92,
+          "triangles": 180,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/himoda.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6943,
+          "size": 6943,
+          "vertices": 92,
+          "triangles": 180,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/himodb.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6944,
+          "size": 6944,
+          "vertices": 92,
+          "triangles": 180,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/iab1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6562,
+          "size": 6562,
+          "vertices": 37,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/iab2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6490,
+          "size": 6490,
+          "vertices": 31,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/iab3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6502,
+          "size": 6502,
+          "vertices": 32,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/iab4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6502,
+          "size": 6502,
+          "vertices": 32,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/iab5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6502,
+          "size": 6502,
+          "vertices": 32,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/iar1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 7257,
+          "size": 7257,
+          "vertices": 39,
+          "triangles": 43,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 12
+        }
+      ]
+    },
+    {
+      "name": "models/iav1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6728,
+          "size": 6728,
+          "vertices": 69,
+          "triangles": 78,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 3,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/iav2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6024,
+          "size": 6024,
+          "vertices": 59,
+          "triangles": 72,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 7,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/iav3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 7598,
+          "size": 7598,
+          "vertices": 83,
+          "triangles": 86,
+          "materials": 13,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/iav4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6177,
+          "size": 6177,
+          "vertices": 42,
+          "triangles": 64,
+          "materials": 12,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/iav5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 5775,
+          "size": 5775,
+          "vertices": 62,
+          "triangles": 72,
+          "materials": 12,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ibb1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/ibb2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/ibb3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/ibb4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/ibb5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/ibm1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6187,
+          "size": 6187,
+          "vertices": 45,
+          "triangles": 62,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 5,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ibm2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6275,
+          "size": 6275,
+          "vertices": 54,
+          "triangles": 64,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 4,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ibm3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6126,
+          "size": 6126,
+          "vertices": 64,
+          "triangles": 80,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ibm4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6141,
+          "size": 6141,
+          "vertices": 57,
+          "triangles": 78,
+          "materials": 9,
+          "extra_meshes": 0,
+          "parts": 3,
+          "markers": 8,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ibm5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 5771,
+          "size": 5771,
+          "vertices": 55,
+          "triangles": 68,
+          "materials": 9,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ibr1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 7269,
+          "size": 7269,
+          "vertices": 39,
+          "triangles": 43,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 12
+        }
+      ]
+    },
+    {
+      "name": "models/icy1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 10700,
+          "size": 10700,
+          "vertices": 34,
+          "triangles": 46,
+          "materials": 10,
+          "extra_meshes": 2,
+          "parts": 6,
+          "markers": 9,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ien1p.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 3,
+          "consumed": 6745,
+          "size": 6745,
+          "vertices": 43,
+          "triangles": 46,
+          "materials": 12,
+          "extra_meshes": 7,
+          "parts": 5,
+          "markers": 11,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/iib1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8451,
+          "size": 8451,
+          "vertices": 53,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/iib2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8451,
+          "size": 8451,
+          "vertices": 53,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/iib3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8451,
+          "size": 8451,
+          "vertices": 53,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/iib4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8451,
+          "size": 8451,
+          "vertices": 53,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/iib5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8439,
+          "size": 8439,
+          "vertices": 52,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/iir1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 7405,
+          "size": 7405,
+          "vertices": 45,
+          "triangles": 45,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 12
+        }
+      ]
+    },
+    {
+      "name": "models/iks1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 5549,
+          "size": 5549,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 4,
+          "extra_meshes": 2,
+          "parts": 4,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/iks2t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 5549,
+          "size": 5549,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 4,
+          "extra_meshes": 2,
+          "parts": 4,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/iks3t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 5549,
+          "size": 5549,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 4,
+          "extra_meshes": 2,
+          "parts": 4,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ism1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 3375,
+          "size": 3375,
+          "vertices": 8,
+          "triangles": 10,
+          "materials": 2,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 18,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ist1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 5072,
+          "size": 5072,
+          "vertices": 27,
+          "triangles": 34,
+          "materials": 10,
+          "extra_meshes": 2,
+          "parts": 3,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ist2t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 4253,
+          "size": 4253,
+          "vertices": 20,
+          "triangles": 30,
+          "materials": 11,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 9,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ist3t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 4102,
+          "size": 4102,
+          "vertices": 36,
+          "triangles": 46,
+          "materials": 7,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 15,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ist4t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 3886,
+          "size": 3886,
+          "vertices": 34,
+          "triangles": 50,
+          "materials": 9,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 8,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ist5t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 3449,
+          "size": 3449,
+          "vertices": 36,
+          "triangles": 44,
+          "materials": 10,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 7,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/itb1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/itb2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/itb3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/itb4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/itb5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/itr1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 7173,
+          "size": 7173,
+          "vertices": 32,
+          "triangles": 43,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 12
+        }
+      ]
+    },
+    {
+      "name": "models/itt1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 2787,
+          "size": 2787,
+          "vertices": 8,
+          "triangles": 8,
+          "materials": 1,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pab1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6562,
+          "size": 6562,
+          "vertices": 37,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/pab2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6490,
+          "size": 6490,
+          "vertices": 31,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/pab3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6502,
+          "size": 6502,
+          "vertices": 32,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/pab4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6502,
+          "size": 6502,
+          "vertices": 32,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/pab5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 6502,
+          "size": 6502,
+          "vertices": 32,
+          "triangles": 40,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/par1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 7245,
+          "size": 7245,
+          "vertices": 38,
+          "triangles": 43,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 12
+        }
+      ]
+    },
+    {
+      "name": "models/pat1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 3376,
+          "size": 3376,
+          "vertices": 54,
+          "triangles": 74,
+          "materials": 12,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pav1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 7454,
+          "size": 7454,
+          "vertices": 66,
+          "triangles": 78,
+          "materials": 11,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pav2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6024,
+          "size": 6024,
+          "vertices": 59,
+          "triangles": 72,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 7,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pav3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 7598,
+          "size": 7598,
+          "vertices": 83,
+          "triangles": 86,
+          "materials": 13,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pav4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6177,
+          "size": 6177,
+          "vertices": 42,
+          "triangles": 64,
+          "materials": 12,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pav5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 5774,
+          "size": 5774,
+          "vertices": 62,
+          "triangles": 72,
+          "materials": 12,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pbb1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/pbb2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/pbb3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/pbb4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/pbb5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 10139,
+          "size": 10139,
+          "vertices": 76,
+          "triangles": 64,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 11,
+          "markers": 0,
+          "planes": 14
+        }
+      ]
+    },
+    {
+      "name": "models/pbm1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 5624,
+          "size": 5624,
+          "vertices": 44,
+          "triangles": 62,
+          "materials": 9,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pbm2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6246,
+          "size": 6246,
+          "vertices": 43,
+          "triangles": 62,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 4,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pbm3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6126,
+          "size": 6126,
+          "vertices": 64,
+          "triangles": 80,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pbm4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6141,
+          "size": 6141,
+          "vertices": 57,
+          "triangles": 78,
+          "materials": 9,
+          "extra_meshes": 0,
+          "parts": 3,
+          "markers": 8,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pbm5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 5774,
+          "size": 5774,
+          "vertices": 55,
+          "triangles": 68,
+          "materials": 9,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pbr1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 7269,
+          "size": 7269,
+          "vertices": 39,
+          "triangles": 43,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 12
+        }
+      ]
+    },
+    {
+      "name": "models/pcv1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 7988,
+          "size": 7988,
+          "vertices": 84,
+          "triangles": 81,
+          "materials": 16,
+          "extra_meshes": 0,
+          "parts": 9,
+          "markers": 5,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pcv2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 6153,
+          "size": 6153,
+          "vertices": 35,
+          "triangles": 50,
+          "materials": 11,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 5,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pcv3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 9287,
+          "size": 9287,
+          "vertices": 86,
+          "triangles": 112,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 10,
+          "markers": 3,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pcv4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 8266,
+          "size": 8266,
+          "vertices": 176,
+          "triangles": 180,
+          "materials": 25,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pcy1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 10700,
+          "size": 10700,
+          "vertices": 34,
+          "triangles": 46,
+          "materials": 10,
+          "extra_meshes": 2,
+          "parts": 6,
+          "markers": 9,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pen1p.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 3,
+          "consumed": 6745,
+          "size": 6745,
+          "vertices": 43,
+          "triangles": 46,
+          "materials": 12,
+          "extra_meshes": 7,
+          "parts": 5,
+          "markers": 11,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pib1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8451,
+          "size": 8451,
+          "vertices": 53,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/pib2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8451,
+          "size": 8451,
+          "vertices": 53,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/pib3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8451,
+          "size": 8451,
+          "vertices": 53,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/pib4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8451,
+          "size": 8451,
+          "vertices": 53,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/pib5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8439,
+          "size": 8439,
+          "vertices": 52,
+          "triangles": 64,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 15
+        }
+      ]
+    },
+    {
+      "name": "models/pir1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 7341,
+          "size": 7341,
+          "vertices": 45,
+          "triangles": 43,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 12
+        }
+      ]
+    },
+    {
+      "name": "models/pks1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 5549,
+          "size": 5549,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 4,
+          "extra_meshes": 2,
+          "parts": 4,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pks2t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 5549,
+          "size": 5549,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 4,
+          "extra_meshes": 2,
+          "parts": 4,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pks3t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 5549,
+          "size": 5549,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 4,
+          "extra_meshes": 2,
+          "parts": 4,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ppt1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 12513,
+          "size": 12513,
+          "vertices": 48,
+          "triangles": 46,
+          "materials": 12,
+          "extra_meshes": 2,
+          "parts": 6,
+          "markers": 9,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/psm1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 3135,
+          "size": 3135,
+          "vertices": 8,
+          "triangles": 10,
+          "materials": 2,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 9,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pst1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 5072,
+          "size": 5072,
+          "vertices": 27,
+          "triangles": 34,
+          "materials": 10,
+          "extra_meshes": 2,
+          "parts": 3,
+          "markers": 10,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pst2t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 4253,
+          "size": 4253,
+          "vertices": 20,
+          "triangles": 30,
+          "materials": 11,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 9,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pst3t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 4102,
+          "size": 4102,
+          "vertices": 36,
+          "triangles": 46,
+          "materials": 7,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 15,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pst4t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 3886,
+          "size": 3886,
+          "vertices": 34,
+          "triangles": 50,
+          "materials": 9,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 8,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/pst5t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 3449,
+          "size": 3449,
+          "vertices": 36,
+          "triangles": 44,
+          "materials": 10,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 7,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/ptb1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/ptb2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/ptb3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/ptb4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/ptb5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8979,
+          "size": 8979,
+          "vertices": 36,
+          "triangles": 52,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 0,
+          "planes": 24
+        }
+      ]
+    },
+    {
+      "name": "models/ptr1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 7173,
+          "size": 7173,
+          "vertices": 32,
+          "triangles": 43,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 12
+        }
+      ]
+    },
+    {
+      "name": "models/ptt1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 2864,
+          "size": 2864,
+          "vertices": 8,
+          "triangles": 10,
+          "materials": 2,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/rab1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8015,
+          "size": 8015,
+          "vertices": 48,
+          "triangles": 50,
+          "materials": 12,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 25
+        }
+      ]
+    },
+    {
+      "name": "models/rav1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 7178,
+          "size": 7178,
+          "vertices": 74,
+          "triangles": 68,
+          "materials": 11,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/rbb1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 9129,
+          "size": 9129,
+          "vertices": 48,
+          "triangles": 58,
+          "materials": 9,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 29
+        }
+      ]
+    },
+    {
+      "name": "models/rbm1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 5151,
+          "size": 5151,
+          "vertices": 44,
+          "triangles": 48,
+          "materials": 9,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/rht1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 3488,
+          "size": 3488,
+          "vertices": 8,
+          "triangles": 10,
+          "materials": 3,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 9,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/rib1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 9643,
+          "size": 9643,
+          "vertices": 46,
+          "triangles": 54,
+          "materials": 12,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 0,
+          "planes": 27
+        }
+      ]
+    },
+    {
+      "name": "models/rlt1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 3487,
+          "size": 3487,
+          "vertices": 8,
+          "triangles": 10,
+          "materials": 3,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 14,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/rpw1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 7225,
+          "size": 7225,
+          "vertices": 49,
+          "triangles": 65,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 16
+        }
+      ]
+    },
+    {
+      "name": "models/rsm1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 2728,
+          "size": 2728,
+          "vertices": 11,
+          "triangles": 13,
+          "materials": 2,
+          "extra_meshes": 2,
+          "parts": 0,
+          "markers": 9,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/rst1t.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 2,
+          "consumed": 4876,
+          "size": 4876,
+          "vertices": 24,
+          "triangles": 36,
+          "materials": 8,
+          "extra_meshes": 2,
+          "parts": 4,
+          "markers": 8,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/rtb1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 8906,
+          "size": 8906,
+          "vertices": 57,
+          "triangles": 58,
+          "materials": 14,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 0,
+          "planes": 29
+        }
+      ]
+    },
+    {
+      "name": "models/rtc1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 1,
+          "consumed": 4314,
+          "size": 4314,
+          "vertices": 31,
+          "triangles": 41,
+          "materials": 7,
+          "extra_meshes": 0,
+          "parts": 3,
+          "markers": 0,
+          "planes": 6
+        }
+      ]
+    },
+    {
+      "name": "models/wan1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 1994,
+          "size": 1994,
+          "vertices": 28,
+          "triangles": 46,
+          "materials": 6,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wb11.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 7571,
+          "size": 7571,
+          "vertices": 128,
+          "triangles": 64,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 4,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wbo1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 766,
+          "size": 766,
+          "vertices": 19,
+          "triangles": 11,
+          "materials": 4,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 3,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wcu1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 4552,
+          "size": 4552,
+          "vertices": 31,
+          "triangles": 39,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 5,
+          "markers": 4,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wcu2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 8552,
+          "size": 8552,
+          "vertices": 64,
+          "triangles": 72,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 9,
+          "markers": 9,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wgp1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 8654,
+          "size": 8654,
+          "vertices": 96,
+          "triangles": 48,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 7,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wgp2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 2922,
+          "size": 2922,
+          "vertices": 32,
+          "triangles": 16,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 2,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wgt1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 588,
+          "size": 588,
+          "vertices": 8,
+          "triangles": 10,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 3,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/whv1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 755,
+          "size": 755,
+          "vertices": 16,
+          "triangles": 13,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wig1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 1930,
+          "size": 1930,
+          "vertices": 26,
+          "triangles": 44,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 5,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wla1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 431,
+          "size": 431,
+          "vertices": 14,
+          "triangles": 6,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wlb1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 630,
+          "size": 630,
+          "vertices": 11,
+          "triangles": 13,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wls1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 427,
+          "size": 427,
+          "vertices": 9,
+          "triangles": 6,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wls2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 487,
+          "size": 487,
+          "vertices": 14,
+          "triangles": 6,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wls3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 487,
+          "size": 487,
+          "vertices": 14,
+          "triangles": 6,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wls4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 487,
+          "size": 487,
+          "vertices": 14,
+          "triangles": 6,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wmb1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 1577,
+          "size": 1577,
+          "vertices": 51,
+          "triangles": 28,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wml1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 1537,
+          "size": 1537,
+          "vertices": 28,
+          "triangles": 32,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 3,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wmm1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 1701,
+          "size": 1701,
+          "vertices": 24,
+          "triangles": 42,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wmn1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 532,
+          "size": 532,
+          "vertices": 5,
+          "triangles": 6,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 7,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wms1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 548,
+          "size": 548,
+          "vertices": 7,
+          "triangles": 10,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wpu1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 600,
+          "size": 600,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wpu2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 597,
+          "size": 597,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wpu3.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 597,
+          "size": 597,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wpu4.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 597,
+          "size": 597,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wpu5.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 598,
+          "size": 598,
+          "vertices": 10,
+          "triangles": 12,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wr11.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 2676,
+          "size": 2676,
+          "vertices": 8,
+          "triangles": 12,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 4,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wr21.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 5962,
+          "size": 5962,
+          "vertices": 34,
+          "triangles": 59,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 6,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wr31.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 7972,
+          "size": 7972,
+          "vertices": 50,
+          "triangles": 83,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 7,
+          "markers": 7,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wse1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 885,
+          "size": 885,
+          "vertices": 12,
+          "triangles": 18,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 3,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wsp1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 8514,
+          "size": 8514,
+          "vertices": 96,
+          "triangles": 48,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 6,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wsp2.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 2922,
+          "size": 2922,
+          "vertices": 32,
+          "triangles": 16,
+          "materials": 1,
+          "extra_meshes": 0,
+          "parts": 2,
+          "markers": 2,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wsr1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 633,
+          "size": 633,
+          "vertices": 9,
+          "triangles": 14,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wt11.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 7671,
+          "size": 7671,
+          "vertices": 108,
+          "triangles": 66,
+          "materials": 5,
+          "extra_meshes": 0,
+          "parts": 15,
+          "markers": 12,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wt12.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 3558,
+          "size": 3558,
+          "vertices": 35,
+          "triangles": 22,
+          "materials": 5,
+          "extra_meshes": 0,
+          "parts": 9,
+          "markers": 4,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/wte1.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 2851,
+          "size": 2851,
+          "vertices": 40,
+          "triangles": 58,
+          "materials": 8,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 13,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xcupd.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 11604,
+          "size": 11604,
+          "vertices": 153,
+          "triangles": 302,
+          "materials": 4,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xflm.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 32907,
+          "size": 32907,
+          "vertices": 484,
+          "triangles": 844,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xhealth.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 2588,
+          "size": 2588,
+          "vertices": 37,
+          "triangles": 64,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xheat.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 17326,
+          "size": 17326,
+          "vertices": 283,
+          "triangles": 432,
+          "materials": 4,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xhelx.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 12455,
+          "size": 12455,
+          "vertices": 183,
+          "triangles": 318,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xhhiw.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 14100,
+          "size": 14100,
+          "vertices": 186,
+          "triangles": 368,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xhsm.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 17326,
+          "size": 17326,
+          "vertices": 283,
+          "triangles": 432,
+          "materials": 4,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xlasr.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 10137,
+          "size": 10137,
+          "vertices": 134,
+          "triangles": 264,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xmbfg.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 52171,
+          "size": 52171,
+          "vertices": 802,
+          "triangles": 1326,
+          "materials": 5,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xmine.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 3551,
+          "size": 3551,
+          "vertices": 49,
+          "triangles": 90,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xmnly.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 16581,
+          "size": 16581,
+          "vertices": 222,
+          "triangles": 432,
+          "materials": 3,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xmole.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 10799,
+          "size": 10799,
+          "vertices": 141,
+          "triangles": 282,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xrack.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 56914,
+          "size": 56914,
+          "vertices": 896,
+          "triangles": 1440,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    },
+    {
+      "name": "models/xspln.bdm",
+      "source": "archive",
+      "exact_parse_candidates": [
+        {
+          "format": 0,
+          "consumed": 32314,
+          "size": 32314,
+          "vertices": 462,
+          "triangles": 834,
+          "materials": 2,
+          "extra_meshes": 0,
+          "parts": 0,
+          "markers": 0,
+          "planes": 0
+        }
+      ]
+    }
+  ],
+  "mismatches": [],
+  "compile_flags": [
+    "-std=c11",
+    "-O2",
+    "-flto",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-Wl,--gc-sections",
+    "-lm"
+  ],
+  "summary": {
+    "native_maps_passed": 30,
+    "mismatches": 0,
+    "models_examined": 163,
+    "models_with_exact_candidate": 163,
+    "ambiguous_models": [],
+    "models_without_exact_candidate": []
+  }
+}

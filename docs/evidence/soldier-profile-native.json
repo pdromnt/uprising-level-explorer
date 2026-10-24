@@ -1,0 +1,37 @@
+{
+  "angles": 2048,
+  "ranges": [
+    [
+      0,
+      255,
+      0,
+      0
+    ],
+    [
+      256,
+      767,
+      3,
+      0
+    ],
+    [
+      768,
+      1279,
+      6,
+      0
+    ],
+    [
+      1280,
+      1791,
+      3,
+      1
+    ],
+    [
+      1792,
+      2047,
+      0,
+      0
+    ]
+  ],
+  "source_commit": "c4eeb807724756394f47a21b11aff6be7ba837cf",
+  "scope": "Actual effect_profile_sample at tick 0 with insit metadata and folded frame handles; bounded memory adapter. Does not verify camera bearing or original-game pixels."
+}
