@@ -6,7 +6,8 @@ export function stepTank(state:TankState,keys:ReadonlySet<string>,dt:number,spee
   const maxSpeed=Math.max(1,Math.min(20,speed/5)),target=throttle*maxSpeed*(throttle<0?.55:1);
   const acceleration=(throttle?9:12)*time;
   state.velocity+=Math.max(-acceleration,Math.min(acceleration,target-state.velocity));
-  const steer=Number(keys.has("KeyD"))-Number(keys.has("KeyA"));
+  // The chase view faces +Z at heading zero, so screen-right is world -X.
+  const steer=Number(keys.has("KeyA"))-Number(keys.has("KeyD"));
   state.heading=(state.heading+steer*1.45*time+Math.PI*2)%(Math.PI*2);
   const x=state.x+Math.sin(state.heading)*state.velocity*time,z=state.z+Math.cos(state.heading)*state.velocity*time;
   const mx=Math.min(margin,width/2),mz=Math.min(margin,height/2);

@@ -7,6 +7,18 @@ import {terrainHeight} from "../src/core/accuracy";
 import {restingAttitude} from "../src/renderer/grounding";
 import type {LevelData,Placement,StaticModel} from "../src/shared/types";
 
+test("A and D steer left and right in the chase view at every cardinal heading",()=>{
+  for(const heading of [0,Math.PI/2,Math.PI,Math.PI*1.5])for(const key of ["KeyA","KeyD"]){
+    const forward=new T.Vector3(Math.sin(heading),0,Math.cos(heading));
+    const right=forward.clone().cross(new T.Vector3(0,1,0));
+    const state:TankState={x:128,z:128,heading,velocity:0};
+    stepTank(state,new Set([key]),.05,25,256,256);
+    const direction=new T.Vector3(Math.sin(state.heading),0,Math.cos(state.heading));
+    const side=direction.dot(right);
+    assert.ok(key==="KeyA"?side<0:side>0,`${key} at heading ${heading} turns toward the correct screen side`);
+  }
+});
+
 test("tank locomotion accelerates, reverses, steers in place and stays bounded after long frames",()=>{
   const run=(dt:number)=>{const state:TankState={x:100,z:100,heading:0,velocity:0};for(let t=0;t<2-1e-8;t+=dt)stepTank(state,new Set(["KeyW"]),dt,25,256,256);return state;};
   const a=run(1/60),b=run(1/120);assert.ok(Math.abs(a.z-b.z)<.05);assert.equal(a.x,100);assert.equal(a.velocity,5);
