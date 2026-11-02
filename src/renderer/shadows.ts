@@ -1,7 +1,7 @@
 import * as T from "three";
 // Native world-down vector is (0,-1,0): project the actual transformed bounds
 // vertically onto the same terrain sampler, rather than inventing a sun angle.
-export function boundsShadow(root:T.Object3D,ground:(x:number,z:number)=>number) {
+export function boundsShadowPositions(root:T.Object3D,ground:(x:number,z:number)=>number) {
   root.updateWorldMatrix(true,true);
   const vertices:number[]=[],signs=[[1,1,1],[-1,1,1],[-1,1,-1],[1,1,-1],[1,-1,1],[-1,-1,1],[-1,-1,-1],[1,-1,-1]];
   const faces=[[[0,3,2,1],[4,5,6,7]],[[0,1,5,4],[3,7,6,2]],[[0,4,7,3],[1,2,6,5]]];
@@ -14,6 +14,10 @@ export function boundsShadow(root:T.Object3D,ground:(x:number,z:number)=>number)
       for(const index of [0,1,2,0,2,3]){const p=corners[face[index]];vertices.push(p.x,ground(p.x,p.z)+.004,p.z);}
     }
   });
+  return vertices;
+}
+export function boundsShadow(root:T.Object3D,ground:(x:number,z:number)=>number) {
+  const vertices=boundsShadowPositions(root,ground);
   if(!vertices.length)return null;
   const geometry=new T.BufferGeometry();geometry.setAttribute("position",new T.Float32BufferAttribute(vertices,3));
   return new T.Mesh(geometry,new T.MeshBasicMaterial({color:0,transparent:true,opacity:.28,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1,side:T.DoubleSide}));

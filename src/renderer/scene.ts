@@ -3,13 +3,14 @@ import { modelPrototype } from "./models";
 import { makeSoldier, spriteMaterials } from "./sprites";
 import { allObjects } from "../core/exploration";
 import { paletteOwner } from "../core/faction-colors";
-import {accuracyTables,detailHeight,terrainHeight,nativeBearing} from "../core/accuracy";
+import {accuracyTables,detailHeight,terrainHeight} from "../core/accuracy";
 import {makeSky} from "./environment";
-import {restingAttitude,orientationMatrix} from "./grounding";
+import {restingAttitude,orientationMatrix,applyWraithGun} from "./grounding";
 import {boundsShadow,groundShadow} from "./shadows";
 import { headingRadians, modelPose } from "../core/models";
 import { buildTerrain } from "./terrain";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import {TankRig} from "./tank";
 import type { LevelData, Terrain } from "../shared/types";
 export function ground(t: Terrain, x: number, z: number) {
   return terrainHeight(t,x,z);
@@ -37,9 +38,15 @@ export class MapScene {
   textures: T.Texture[] = [];
   keys = new Set<string>();
   pointer = false;
+  tank:TankRig|null=null;
+  pickingDrive=false;
+  private tankStartVisible=true;
   last = performance.now();
   onSelect: (id: number) => void = () => {};
   onCamera: (s: string) => void = () => {};
+  onModeChange:()=>void=()=>{};
+  onDrivePick:()=>void=()=>{};
+  onTankDistance:(distance:number)=>void=()=>{};
   constructor(private host: HTMLElement,private animate = true) {
     this.renderer = new T.WebGLRenderer({ antialias: true });
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -56,7 +63,7 @@ export class MapScene {
     new ResizeObserver(() => this.resize()).observe(host);
     this.resize();
     this.renderer.domElement.addEventListener("click", (e) => {
-      if (this.mode === "fly" || this.dragged) return;
+      if (this.dragged) return;
       const r = host.getBoundingClientRect();
       const ray = new T.Raycaster();
       ray.setFromCamera(
@@ -66,6 +73,8 @@ export class MapScene {
         ),
         this.camera,
       );
+      if(this.pickingDrive){const hit=ray.intersectObjects(this.terrainMeshes)[0];if(hit)this.driveHere(hit.point.x,hit.point.z);return;}
+      if(this.mode==="fly"||this.mode==="tank")return;
       const hit = ray
         .intersectObjects([...this.targets, ...this.terrainMeshes], true)
         .find((h) => {
@@ -100,12 +109,17 @@ export class MapScene {
         rotation.z = 0;
         this.camera.quaternion.setFromEuler(rotation);
       }
+      if(this.mode==="tank")this.tank?.look(e.movementX,e.movementY);
     });
+    this.renderer.domElement.addEventListener("wheel",e=>{if(this.mode!=="tank"||!this.tank)return;e.preventDefault();this.tank.distance=T.MathUtils.clamp(this.tank.distance+e.deltaY*.01,4,24);this.onTankDistance(this.tank.distance);},{passive:false});
     window.addEventListener("keydown", (e) => {
-      if ((e.target as HTMLElement).closest("input,textarea,select")) return;
+      const target=e.target as HTMLElement;
+      if (target.closest("input,textarea,select,[contenteditable=true]")&&!target.matches('input[type="range"]')) return;
       this.keys.add(e.code);
+      if(e.code==="Escape"&&this.pickingDrive){this.pickDrive(false);return;}
+      if(e.code==="KeyR"&&this.mode==="tank"){this.reset();e.preventDefault();}
       if (
-        this.mode === "fly" &&
+        (this.mode === "fly"||this.mode==="tank") &&
         ["KeyW", "KeyA", "KeyS", "KeyD", "KeyQ", "KeyE", "Space"].includes(
           e.code,
         )
@@ -116,6 +130,7 @@ export class MapScene {
     window.addEventListener("blur", () => {
       this.keys.clear();
       this.pointer = false;
+      if(this.tank)this.tank.state.velocity=0;
     });
     if(this.animate)requestAnimationFrame(this.frame);
   }
@@ -129,6 +144,8 @@ export class MapScene {
     this.camera.updateProjectionMatrix();
   }
   reset() {
+    this.pickDrive(false);
+    if(this.mode==="tank"&&this.tank){this.tank.reset();this.tank.update(0,new Set(),this.speed,this.camera,!!this.groups.shadows?.visible,true);this.keys.clear();return;}
     this.camera.up.set(0, 1, 0);
     this.camera.position.set(310, 230, 330);
     this.controls.target.set(128, 4, 128);
@@ -136,7 +153,10 @@ export class MapScene {
     this.controls.update();
   }
   setMode(mode: string) {
-    if (this.mode === "fly" && mode !== "fly") {
+    const previous=this.mode;
+    if(mode==="tank"&&!this.tank)return;
+    if(this.mode==="tank"&&mode!=="tank"&&this.tank){this.tank.group.visible=false;this.tank.state.velocity=0;this.restoreTankStart();}
+    if ((this.mode === "fly"||this.mode==="tank") && mode !== this.mode) {
       const forward = new T.Vector3();
       this.camera.getWorldDirection(forward);
       this.controls.target
@@ -144,15 +164,22 @@ export class MapScene {
         .addScaledVector(forward, 60);
     }
     this.mode = mode;
-    this.controls.enabled = mode !== "fly";
+    this.keys.clear();
+    this.controls.enabled = mode !== "fly"&&mode!=="tank";
     this.controls.enableRotate = mode === "orbit";
     if (mode === "top") {
       this.camera.position.set(128, 330, 128.001);
       this.controls.target.set(128, 0, 128);
       this.camera.lookAt(this.controls.target);
     }
-    this.controls.update();
+    if(mode==="tank"&&this.tank){this.tank.group.visible=true;if(previous!=="tank")this.hideTankStart();this.tank.update(0,new Set(),this.speed,this.camera,!!this.groups.shadows?.visible,true);}
+    else this.controls.update();
+    this.syncShadows();this.onModeChange();
   }
+  pickDrive(active:boolean){this.pickingDrive=active&&!!this.tank;this.renderer.domElement.style.cursor=this.pickingDrive?"crosshair":"";this.onDrivePick();}
+  driveHere(x:number,z:number){if(!this.tank)return;this.tank.relocate(x,z);this.pickDrive(false);this.setMode("tank");}
+  private hideTankStart(){const source=this.targets.find(o=>o.userData.id===this.tank?.start.id);if(source){this.tankStartVisible=source.visible;source.visible=false;}this.syncSelection();}
+  private restoreTankStart(){const source=this.targets.find(o=>o.userData.id===this.tank?.start.id);if(source)source.visible=this.tankStartVisible;}
   private frame = () => {
     const now = performance.now(),
       dt = Math.min((now - this.last) / 1000, 0.05);
@@ -169,7 +196,8 @@ export class MapScene {
       direction.y +=
         Number(this.keys.has("KeyE")) - Number(this.keys.has("KeyQ"));
       this.camera.position.addScaledVector(direction, speed);
-    } else this.controls.update();
+    } else if(this.mode==="tank"&&this.tank)this.tank.update(dt,this.keys,this.speed,this.camera,!!this.groups.shadows.visible);
+    else this.controls.update();
     for (const soldier of this.soldiers) soldier.update(this.camera);
     if(this.skyController) {
       const size=this.renderer.getDrawingBufferSize(new T.Vector2());
@@ -178,12 +206,13 @@ export class MapScene {
     }
     this.renderer.render(this.scene, this.camera);
     this.onCamera(
-      `${this.camera.position.x.toFixed(0)} / ${this.camera.position.y.toFixed(0)} / ${this.camera.position.z.toFixed(0)}`,
+      this.mode==="tank"&&this.tank?`Tank ${this.tank.state.x.toFixed(1)} / ${this.tank.state.z.toFixed(1)}`:`${this.camera.position.x.toFixed(0)} / ${this.camera.position.y.toFixed(0)} / ${this.camera.position.z.toFixed(0)}`,
     );
     if(this.animate)requestAnimationFrame(this.frame);
   };
   renderOnce(){this.frame();}
   clear() {
+    this.keys.clear();this.pointer=false;this.pickDrive(false);this.tank=null;
     for (const material of this.soldierMaterials) {
       material.map?.dispose();
       material.dispose();
@@ -327,10 +356,7 @@ export class MapScene {
         root.matrix.copy(orientationMatrix(pose.heading,pose.pitch,pose.roll,root.position));
         root.matrixAutoUpdate=false;
         root.userData.attitude=pose;
-        if(obj.kind===32) {
-          const hull=root.children[0],mount=hull?.children[0],turret=mount?.children[0];
-          if(turret){const bearing=nativeBearing(-accuracyTables.sine[pose.pitch&2047],Math.fround(accuracyTables.sine[(pose.roll+512)&2047]*accuracyTables.sine[(pose.pitch+512)&2047])),s=accuracyTables.sine[bearing],c=accuracyTables.sine[(bearing+512)&2047],pivot=asset.data.anchors[2],origin=asset.data.anchors[1];turret.rotation.x=bearing*Math.PI/1024;turret.position.set(origin[0]/512,((pivot[2]*s-pivot[1]*c)+origin[1]+pivot[1])/512,(-pivot[1]*s-pivot[2]*c+origin[2]+pivot[2])/512);}
-        }
+        if(obj.kind===32)applyWraithGun(root,asset.data,pose);
       }
       root.traverse((node) => (node.userData.id = obj.id));
       const group=obj.citadel ? "citadels" : obj.derived?.type==="gate" ? "gates" : obj.derived?.type==="player-start" ? "starts" : obj.derived?.type==="teleporter" ? "teleporters" : "objects";
@@ -411,7 +437,11 @@ export class MapScene {
         this.groups.teleporters.add(ring);
       }
     }
-    this.setMode("orbit");
+    const start=data.derivedObjects.find(o=>o.derived?.type==="player-start"&&o.owner===0);
+    const tankModel=start?data.modelSelections[start.id]?.model:null;
+    if(start&&tankModel&&data.models[tankModel]){this.tank=new TankRig(data,data.models[tankModel],start,factionColors);this.scene.add(this.tank.group);}
+    // clear() disposed the old rig; do not restore its start visibility into this level.
+    this.mode="orbit";this.setMode("orbit");
     this.reset();
   }
   select(id: number, focus = false) {
@@ -429,6 +459,7 @@ export class MapScene {
     this.selected.visible = target.visible && target.parent!.visible;
     this.scene.add(this.selected);
     if (focus) {
+      if(this.mode==="tank")this.setMode("orbit");
       const bounds = new T.Box3().setFromObject(target),
         center = bounds.getCenter(new T.Vector3());
       const radius = bounds.getSize(new T.Vector3()).length() * 0.5;
@@ -458,6 +489,7 @@ export class MapScene {
   filterObjects(predicate: (id:number)=>boolean) {
     for(const target of this.targets) target.visible=predicate(target.userData.id);
     for(const [id,overlay] of this.citadelOverlays) overlay.visible=predicate(id);
+    if(this.mode==="tank")this.hideTankStart();
     this.syncSelection();
     this.syncShadows();
   }

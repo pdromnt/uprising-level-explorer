@@ -1,6 +1,6 @@
 import * as T from "three";
 import type {Terrain,Placement,BinaryModel} from "../shared/types";
-import {accuracyTables as tables,terrainHeight,detailHeight} from "../core/accuracy";
+import {accuracyTables as tables,terrainHeight,detailHeight,nativeBearing} from "../core/accuracy";
 import {headingRadians} from "../core/models";
 const f=Math.fround;
 // gameplay_geometry_terrain_normal_values has its own triangle selection,
@@ -65,4 +65,12 @@ export function restingAttitude(t:Terrain,o:Placement,model:BinaryModel) {
 export function orientationMatrix(heading:number,pitch:number,roll:number,position:T.Vector3) {
   const sin=(step:number)=>tables.sine[step&2047],ca=sin(heading+512),sa=sin(heading),cb=sin(pitch+512),sb=sin(pitch),cc=sin(roll+512),sc=sin(roll),saved=f(sc*sb);
   return new T.Matrix4().set(f(cc*ca+sc*sb*sa),f(sb*sa*cc-sc*ca),f(sa*cb),position.x,f(sc*cb),f(cc*cb),-sb,position.y,f(saved*ca-sa*cc),f(sa*sc+sb*cc*ca),f(cb*ca),position.z,0,0,0,1);
+}
+export function applyWraithGun(root:T.Object3D,data:BinaryModel,pose:{pitch:number;roll:number}) {
+  const turret=root.children[0]?.children[0]?.children[0];
+  if(!turret||!data.anchors[2]||!data.anchors[1])return;
+  const bearing=nativeBearing(-tables.sine[pose.pitch&2047],Math.fround(tables.sine[(pose.roll+512)&2047]*tables.sine[(pose.pitch+512)&2047]));
+  const s=tables.sine[bearing],c=tables.sine[(bearing+512)&2047],pivot=data.anchors[2],origin=data.anchors[1];
+  turret.rotation.x=bearing*Math.PI/1024;
+  turret.position.set(origin[0]/512,((pivot[2]*s-pivot[1]*c)+origin[1]+pivot[1])/512,(-pivot[1]*s-pivot[2]*c+origin[2]+pivot[2])/512);
 }

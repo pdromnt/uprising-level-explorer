@@ -7,6 +7,7 @@ history. The viewer is read-only; a game installation supplies its level assets.
 ## Development and current behavior
 
 - [Development](development.md): setup, architecture, validation and packaging.
+- [Tank Mode](tank-mode.md): ground-level exploration, controls and movement limits.
 - [CI and releases](ci-and-releases.md): Windows x64/macOS ARM64 commit builds
   and manual releases from an existing tag.
 - [Contributing](../CONTRIBUTING.md): change boundaries and review expectations.

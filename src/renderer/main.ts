@@ -33,6 +33,9 @@ app.innerHTML = `<div id="viewport"></div><div class="vignette"></div>
 const el = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id) as T;
 const text = (id: string, value: string) => (el(id).textContent = value);
+document.querySelector('[data-camera="top"]')!.insertAdjacentHTML("afterend",`<button data-camera="tank" title="Explore at ground level in a Wraith">Tank</button><button id="drive-here" title="Choose a point on the terrain to drive from">Drive here</button>`);
+el("camera-help").insertAdjacentHTML("beforebegin",`<div class="panel tank-controls" id="tank-controls" hidden><label>Chase distance <input id="tank-distance" type="range" min="4" max="24" value="8" step="0.5" aria-label="Tank chase distance"></label><span>Terrain only · scenery has no collision</span></div>`);
+el("focus").insertAdjacentHTML("afterend",`<button id="drive-selection" class="secondary">Drive here</button>`);
 el("environment").nextElementSibling!.textContent="Sky";
 el("environment").closest("label")!.insertAdjacentHTML("afterend",`<label title="Show distance fog; stays on until you turn it off"><input type="checkbox" id="fog"><span>Fog</span></label>`);
 el<HTMLInputElement>("fog").checked=localStorage.getItem("fog-enabled")==="true";
@@ -65,6 +68,9 @@ try {
   scene = new MapScene(el("viewport"));
   scene.onSelect = (id) => select(id);
   scene.onCamera = (s) => text("coordinates", s);
+  scene.onModeChange=updateCameraUI;
+  scene.onTankDistance=distance=>{el<HTMLInputElement>("tank-distance").value=String(distance);localStorage.setItem("tank-distance",String(distance));};
+  scene.onDrivePick=()=>{el("drive-here").classList.toggle("active",!!scene?.pickingDrive);updateCameraUI();};
 } catch (e) {
   showError(
     `3D renderer unavailable: ${(e as Error).message}. Mission text inspection is still available.`,
@@ -137,9 +143,11 @@ async function load(id: string, preserveCamera = false) {
           target: scene.controls.target.clone(),
           rotation: scene.camera.quaternion.clone(),
           mode: scene.mode,
+          tank:scene.mode==="tank"?scene.tank?.snapshot():null,
         }
       : null;
   const previousSelection = preserveCamera ? selected : null;
+  const wasTank=scene?.mode==="tank";
   const token = ++generation;
   busy(true);
   try {
@@ -154,15 +162,16 @@ async function load(id: string, preserveCamera = false) {
     }
     level = result.data;
     scene?.load(level,el<HTMLInputElement>("faction-colors").checked);
+    if(scene?.tank){const distance=Number(localStorage.getItem("tank-distance")||8);scene.tank.distance=Number.isFinite(distance)?Math.max(4,Math.min(24,distance)):8;}
     const ownerSelect=el<HTMLSelectElement>("owner-filter"), priorOwner=ownerSelect.value;
     ownerSelect.replaceChildren(new Option("All owners","all"),...Array.from(new Set(allObjects(level).map(o=>ownerIdentity(o.owner)))).sort((a,b)=>a-b).map(owner=>new Option(ownerLabel(owner),String(owner))));
     ownerSelect.value=Array.from(ownerSelect.options).some(o=>o.value===priorOwner)?priorOwner:"all";
     if (pose && scene) {
+      if(pose.tank)scene.tank?.restore(pose.tank);
       scene.setMode(pose.mode);
-      scene.camera.position.copy(pose.position);
-      scene.camera.quaternion.copy(pose.rotation);
-      scene.controls.target.copy(pose.target);
+      if(pose.mode!=="tank"){scene.camera.position.copy(pose.position);scene.camera.quaternion.copy(pose.rotation);scene.controls.target.copy(pose.target);}
     }
+    else if(wasTank)scene?.setMode("tank");
     selected = null;
     el("selection").hidden = true;
     text("mission-title", worldTitle(level.mission.title));
@@ -191,22 +200,7 @@ async function load(id: string, preserveCamera = false) {
     scene?.surface(el<HTMLSelectElement>("surface").value);
     scene?.environment(el<HTMLInputElement>("environment").checked);
     scene?.fog(el<HTMLInputElement>("fog").checked);
-    document
-      .querySelectorAll("[data-camera]")
-      .forEach((b) =>
-        b.classList.toggle(
-          "active",
-          (b as HTMLElement).dataset.camera === (pose?.mode ?? "orbit"),
-        ),
-      );
-    text(
-      "camera-help",
-      pose?.mode === "fly"
-        ? "Drag to look · W A S D to move · Q / E down / up · Shift faster"
-        : pose?.mode === "top"
-          ? "Drag to pan · scroll to zoom"
-          : "Drag to orbit · scroll to zoom · right drag to pan",
-    );
+    updateCameraUI();
     renderObjects();
     renderReader();
     renderMissions();
@@ -363,6 +357,19 @@ el("deselect").onclick = () => {
 el("focus").onclick = () => {
   if (selected !== null) scene?.select(selected, true);
 };
+el("drive-selection").onclick=()=>{const object=level&&allObjects(level).find(o=>o.id===selected);if(object)scene?.driveHere(object.x,object.z);};
+el("drive-here").onclick=()=>scene?.pickDrive(!scene.pickingDrive);
+el("tank-distance").oninput=()=>{if(!scene?.tank)return;scene.tank.distance=Number(el<HTMLInputElement>("tank-distance").value);localStorage.setItem("tank-distance",String(scene.tank.distance));};
+function updateCameraUI(){
+  const mode=scene?.mode??"orbit",available=!!scene?.tank;
+  document.querySelectorAll<HTMLButtonElement>("[data-camera]").forEach(b=>{b.classList.toggle("active",b.dataset.camera===mode);if(b.dataset.camera==="tank"){b.disabled=!available;b.title=available?"Explore at ground level in a Wraith":"Wraith model unavailable in this level";}});
+  el<HTMLButtonElement>("drive-here").disabled=!available;el<HTMLButtonElement>("drive-selection").disabled=!available;
+  el("tank-controls").hidden=mode!=="tank";
+  if(scene?.tank)el<HTMLInputElement>("tank-distance").value=String(scene.tank.distance);
+  el("reset").title=mode==="tank"?"Reset tank to player start (R)":"Reset camera";
+  el("speed").setAttribute("aria-label",mode==="tank"?"Driving speed":"Flight speed");
+  text("camera-help",scene?.pickingDrive?"Click terrain to drive here · Esc to cancel":mode==="tank"?"W / S drive · A / D steer · drag to look · scroll to zoom · R reset · Orbit to exit":mode==="fly"?"Drag to look · W A S D to move · Q / E down / up · Shift faster":mode==="top"?"Drag to pan · scroll to zoom":"Drag to orbit · scroll to zoom · right drag to pan");
+}
 document
   .querySelectorAll<HTMLInputElement>("[data-layer]")
   .forEach(
@@ -379,22 +386,10 @@ el("surface").onchange = () =>
   scene?.surface(el<HTMLSelectElement>("surface").value);
 document.querySelectorAll<HTMLButtonElement>("[data-camera]").forEach(
   (b) =>
-    (b.onclick = () => {
-      scene?.setMode(b.dataset.camera!);
-      document
-        .querySelectorAll("[data-camera]")
-        .forEach((c) => c.classList.toggle("active", c === b));
-      text(
-        "camera-help",
-        b.dataset.camera === "fly"
-          ? "Drag to look · W A S D to move · Q / E down / up · Shift faster"
-          : b.dataset.camera === "top"
-            ? "Drag to pan · scroll to zoom"
-            : "Drag to orbit · scroll to zoom · right drag to pan",
-      );
-    }),
+    (b.onclick = () => {scene?.pickDrive(false);scene?.setMode(b.dataset.camera!);}),
 );
 el("reset").onclick = () => {
+  if(scene?.mode==="tank"){scene.reset();return;}
   document.querySelector<HTMLButtonElement>("[data-camera=orbit]")!.click();
   scene?.reset();
 };

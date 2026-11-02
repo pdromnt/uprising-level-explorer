@@ -335,7 +335,45 @@ try {
   await page.locator("#surface").selectOption("height");
   await page.locator("#surface").selectOption("wireframe");
   await page.locator("#surface").selectOption("textured");
+  await page.locator('[data-camera="tank"]').click();
+  assert.equal(await page.locator("#tank-controls").isVisible(),true);
+  await page.waitForFunction(()=>document.querySelector('#coordinates').textContent.startsWith('Tank '));
+  const tankSpawn=await page.locator("#coordinates").innerText();
+  await page.keyboard.down("KeyW");await page.waitForTimeout(700);await page.keyboard.up("KeyW");
+  assert.notEqual(await page.locator("#coordinates").innerText(),tankSpawn,"Tank drives across the level");
+  await page.keyboard.down("KeyA");await page.waitForTimeout(300);await page.keyboard.up("KeyA");
+  const tankCanvas=await page.locator("canvas").boundingBox();
+  await page.mouse.move(tankCanvas.x+tankCanvas.width/2,tankCanvas.y+tankCanvas.height/2);await page.mouse.down();
+  await page.mouse.move(tankCanvas.x+tankCanvas.width/2+60,tankCanvas.y+tankCanvas.height/2+12,{steps:5});await page.mouse.up();
+  await page.mouse.wheel(0,100);await page.waitForTimeout(100);
+  assert.equal(await page.locator("#tank-distance").inputValue(),"9","Mouse wheel changes Tank chase distance");
+  await page.screenshot({path:path.join(root,"artifacts","viewer-tank-mode.png")});
+  await page.locator("#reset").click();await page.waitForTimeout(100);
+  assert.equal(await page.locator("#coordinates").innerText(),tankSpawn,"Reset stays in Tank mode and returns to the player start");
+  await page.locator("#drive-selection").click();await page.waitForTimeout(100);
+  assert.notEqual(await page.locator("#coordinates").innerText(),tankSpawn,"Drive here relocates to the selected object");
+  const parked=await page.locator("#coordinates").innerText();
+  await page.locator("#faction-colors").uncheck();await page.locator("#loading").waitFor({state:"hidden"});await page.waitForTimeout(100);
+  assert.equal(await page.locator("#coordinates").innerText(),parked,"Material reload preserves the parked tank");
+  await page.locator("#faction-colors").check();await page.locator("#loading").waitFor({state:"hidden"});
+  await page.locator("#tank-distance").evaluate(e=>{e.value="14";e.dispatchEvent(new Event("input",{bubbles:true}));});
+  await page.locator("#faction-colors").uncheck();await page.locator("#loading").waitFor({state:"hidden"});
+  assert.equal(await page.locator("#tank-distance").inputValue(),"14","Chase distance survives model reloads");
+  await page.locator("#faction-colors").check();await page.locator("#loading").waitFor({state:"hidden"});
+  await page.locator("#drive-here").click();assert.match(await page.locator("#camera-help").innerText(),/Click terrain/);
+  await page.keyboard.press("Escape");assert.doesNotMatch(await page.locator("#camera-help").innerText(),/Click terrain/);
+  await page.locator('[data-camera="orbit"]').click();await page.locator("#reset").click();
+  await page.locator("#drive-here").click();const driveCanvas=await page.locator("canvas").boundingBox();
+  await page.mouse.click(driveCanvas.x+driveCanvas.width/2,driveCanvas.y+driveCanvas.height/2);
+  await page.waitForFunction(()=>document.querySelector('[data-camera="tank"]').classList.contains('active'));
+  assert.doesNotMatch(await page.locator("#camera-help").innerText(),/Click terrain/,"Terrain placement finishes when a ground point is picked");
+  for(const world of ["Training 1","Dakka"]){
+    await page.locator("#mission-button").click();await page.locator("#mission-search").fill(world.replace(' ',''));await page.locator(".mission-row").first().click();await page.locator("#loading").waitFor({state:"hidden"});
+    assert.equal(await page.locator('[data-camera="tank"]').getAttribute("class"),"active","Tank mode follows mission switches to the new player start");
+  }
+  console.log("PASS: Tank driving, steering/look/zoom, reset, both relocation actions, mission switches and parked-state reloads.");
   await page.locator("[data-camera=fly]").click();
+  assert.equal(await page.locator("#tank-controls").isVisible(),false);
   const beforeFlight = await page.locator("#coordinates").innerText();
   await page.keyboard.down("KeyW");
   await page.waitForTimeout(250);
@@ -353,7 +391,7 @@ try {
     /Native terrain lighting/,
   );
   await page.locator("#close-reader").click();
-  await page.locator("#deselect").click();
+  if(await page.locator("#deselect").isVisible())await page.locator("#deselect").click();
   await page.locator("#hide").click();
   assert.equal(
     await page
@@ -401,6 +439,7 @@ try {
   await restored.locator("#loading").waitFor({ state: "hidden" });
   assert.equal(await restored.locator("#mission-title").innerText(), "Dakka");
   assert.equal(await restored.locator("#fog").isChecked(),true,"Fog preference persists across mission changes and restarts");
+  assert.equal(await restored.locator("#tank-distance").inputValue(),"14","Chase distance persists across restarts");
   await restored.locator("#fog").uncheck();
   assert.equal(await restored.locator("#game-fonts").isChecked(),false,"System-font fallback persists across restarts");
   assert.equal(await restored.locator("body").evaluate(e=>e.classList.contains('game-typography')),false);

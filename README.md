@@ -21,6 +21,8 @@ are not bundled. UI fonts and the application icon are bundled separately.
   **Rabble AAV Factory**; raw IDs remain available in the inspector.
 - Orbit, free-flight and top-down cameras, independent scene layers and a
   hideable interface.
+- **Tank Mode:** roam in a terrain-following Wraith with a smooth chase camera,
+  mouse look, adjustable distance, reset and click-to-place relocation.
 - Restored layered skies from the decompiled port. **Sky** and **Fog** have
   separate controls; fog defaults off, remembers your choice and never switches
   automatically with the camera.
@@ -55,12 +57,23 @@ once and starts the app; rerun it after edits.
 | Move in Fly mode | W A S D |
 | Move down / up | Q / E |
 | Faster flight | Hold Shift |
+| Drive forward / reverse in Tank mode | W / S |
+| Steer in Tank mode | A / D |
+| Tank camera look / distance | Drag / scroll |
+| Reset tank to player start | R or the reset button |
 | Hide / show interface | H |
 | Previous / next filtered object | [ / ] |
 | Close reading/search panels | Esc |
 
 Select an object to inspect it; **Focus object** moves the camera to it. Use the
 right-hand layer controls to show/hide terrain overlays, objects, sky and fog.
+
+Choose **Tank** to start at Player 1's spawn. **Drive here** in the camera bar
+lets you pick a terrain point; the inspector's **Drive here** starts at the
+selected object. Esc cancels placement; choose Orbit/Fly/Top to leave Tank mode.
+The Wraith stays inside the map and follows slopes. Scenery/buildings have no
+collision, and water/lava impose no movement restrictions. This is an inspection
+controller, not the original game's vehicle physics. See [Tank Mode](docs/tank-mode.md).
 
 ## Build and validate
 
