@@ -55,8 +55,11 @@ bounds/long frames, native contact height, terrain camera clearance and unchange
 source records. The asset-free packaged GPU probe exercises the actual MapScene
 controller, verifies visible chase-camera model pixels, reset, relocation,
 filter-independent visibility, restored start markers and unavailable assets.
+It also checks object clicks after switching from Tank to Orbit, Fly and Top,
+including cancellation of an armed terrain placement action.
 
 The installed-game desktop suite drives Dakka, adjusts the camera, relocates
 through the inspector and terrain picker, changes materials while parked,
-switches worlds and verifies persisted chase distance. It writes local
+switches worlds, clicks actual model geometry in all three exploration modes
+after driving, and verifies persisted chase distance. It writes local
 screenshots into ignored `artifacts/`.

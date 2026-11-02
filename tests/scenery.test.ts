@@ -65,8 +65,8 @@ test("scenery settles at the lowest rotated center/corner sample, then adds mode
   assert.equal(modelPose({ ...object, heading: 90 }, model, slope).y, 76); // Rotating the wider dimension changes support height.
   assert.equal(
     modelPose({ ...object, kind: 38 }, model, slope).y,
-    100,
-    "Bomber retains source altitude",
+    80+3500/512,
+    "Bomber placement replaces source altitude with terrain plus its reserved flight height",
   );
   assert.equal(
     modelPose({ ...object, kind: 39 }, model, slope).y,

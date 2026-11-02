@@ -7,7 +7,7 @@ import {accuracyTables,detailHeight,terrainHeight} from "../core/accuracy";
 import {makeSky} from "./environment";
 import {restingAttitude,orientationMatrix,applyWraithGun} from "./grounding";
 import {boundsShadow,groundShadow} from "./shadows";
-import { headingRadians, modelPose } from "../core/models";
+import { headingRadians, modelPose, bomberSpawnHeight } from "../core/models";
 import { buildTerrain } from "./terrain";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import {TankRig} from "./tank";
@@ -74,7 +74,7 @@ export class MapScene {
         this.camera,
       );
       if(this.pickingDrive){const hit=ray.intersectObjects(this.terrainMeshes)[0];if(hit)this.driveHere(hit.point.x,hit.point.z);return;}
-      if(this.mode==="fly"||this.mode==="tank")return;
+      if(this.mode==="tank")return;
       const hit = ray
         .intersectObjects([...this.targets, ...this.terrainMeshes], true)
         .find((h) => {
@@ -155,6 +155,9 @@ export class MapScene {
   setMode(mode: string) {
     const previous=this.mode;
     if(mode==="tank"&&!this.tank)return;
+    this.pointer=false;
+    this.dragged=false;
+    this.pickDrive(false);
     if(this.mode==="tank"&&mode!=="tank"&&this.tank){this.tank.group.visible=false;this.tank.state.velocity=0;this.restoreTankStart();}
     if ((this.mode === "fly"||this.mode==="tank") && mode !== this.mode) {
       const forward = new T.Vector3();
@@ -293,7 +296,9 @@ export class MapScene {
     const prototypes = new Map<string, T.Group>(),
       modelTextures = new Map<string, T.DataTexture>();
     const spriteCache = new Map<string, T.SpriteMaterial[]>();
+    let bomberCount=0;
     for (const obj of allObjects(data)) {
+      const bomberIndex=obj.kind===38?bomberCount++:0;
       const selection = data.modelSelections[obj.id],
         asset = selection?.model ? data.models[selection.model] : null;
       let root: T.Object3D;
@@ -309,7 +314,7 @@ export class MapScene {
           prototypes.set(key, prototype);
         }
         root = prototype.clone(true);
-        const pose = modelPose(obj, asset.data, (x, z) => ground(t, x, z));
+        const pose = modelPose(obj, asset.data, (x, z) => ground(t, x, z), bomberIndex);
         root.position.set(pose.x, pose.y, pose.z);
         if(obj.derived?.type==="gate") {
           const flag=t.flags[(Math.floor(obj.z)&255)*256+(Math.floor(obj.x)&255)];
@@ -345,7 +350,7 @@ export class MapScene {
         const airborne = obj.kind === 38 || obj.kind === 39;
         root.position.set(
           obj.x,
-          airborne ? obj.y : ground(t, obj.x, obj.z) + (building ? 1.5 : 0.7),
+          obj.kind===38 ? bomberSpawnHeight(ground(t,obj.x,obj.z),bomberIndex) : airborne ? obj.y : ground(t, obj.x, obj.z) + (building ? 1.5 : 0.7),
           obj.z,
         );
       }

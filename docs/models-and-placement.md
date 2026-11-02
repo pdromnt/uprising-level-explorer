@@ -243,6 +243,25 @@ then adds the model's vertical extent once. The viewer now applies this second
 stage. Keeping the initially preserved SLK Y caused Centari's floating decor.
 
 Heading conversion is `truncate(degrees * 5.688889026641846f) & 2047`.
+
+Bomber placement has a second stage too: `55a890` / `55ab20`
+(`source/game/level_vehicle_factory.c`, `aircraft_place`) discards the SLK Y.
+It places each 0x26 bomber at terrain height plus the shared altitude allocator
+`63a2bc`. Level startup initializes that allocator to 3,500 game units; placement
+increments it by 200 (`577c64`). The viewer reserves these heights in map object
+order, including models that fall back to wireframes, and divides by 512 for
+viewer coordinates. Raw map positions remain available in the inspector.
+This previews initial placement; script-created aircraft and subsequent flight
+are not simulated. The AAV (0x27) follows `5436e0` / `539a70` instead and retains
+the supplied SLK altitude at placement.
+
+The installed 30-map corpus contains 57 AAV placements and no 0x26 bombers.
+Those low AAV positions are therefore meaningful initial state, rather than a
+request to snap them to a generic cruising height. Their subsequent movement and
+special ascent are handled by `game_level_class27_destination` /
+`game_level_class27_ascent` in `source/game/level_vehicle_update.c` and
+`source/game/level_vehicle_targeting.c`. The static viewer does not run those
+orders or flight updates.
 There are 2,048 angular steps per full turn. Native orientation/axis conventions
 must still be matched by visual checks in the future viewer.
 

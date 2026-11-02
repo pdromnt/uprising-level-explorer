@@ -146,7 +146,9 @@ test(
     assert.ok(Math.abs(hullPositions.getX(0) - nativeX) < 1e-6);
     const pose = modelPose(object(33), tank.data, 10);
     assert.equal(pose.y, Math.fround(5120 + tank.data.center[1]) / 512);
-    assert.equal(modelPose({ ...object(38), y: 22 }, tank.data, 10).y, 22);
+    assert.equal(modelPose({ ...object(38), y: 22 }, tank.data, 10).y, 10+3500/512);
+    assert.equal(modelPose({ ...object(38), y: -100 }, tank.data, 10, 2).y, 10+3900/512);
+    assert.equal(modelPose({ ...object(39), y: 22 }, tank.data, 10).y, 22);
     assert.equal(
       modelPose({ ...object(176), y: -2 }, tank.data, 10).y,
       Math.fround(5120 + tank.data.center[1]) / 512,

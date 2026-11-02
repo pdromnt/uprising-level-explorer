@@ -81,7 +81,7 @@ try {
   const tankProbe=await build({entryPoints:[path.join(root,"tests/tank-gpu.ts")],bundle:true,write:false,format:"iife",platform:"browser"});
   await page.evaluate(tankProbe.outputFiles[0].text);
   const tank=await page.evaluate(()=>window.probeTankMode());
-  assert.deepEqual(tank.checks,Array(8).fill(true));assert.ok(tank.pixels>50,"Moving tank remains visible in its chase camera");
+  assert.deepEqual(tank.checks,Array(13).fill(true));assert.ok(tank.pixels>50,"Moving tank remains visible in its chase camera");
   console.log(`PASS: Tank mode movement, reset, bounds, filters and real chase-camera rendering (${tank.pixels} model pixels).`);
   await page.screenshot({ path: path.join(artifacts, `package-smoke-${process.platform}-${process.arch}.png`) });
   assert.deepEqual(errors, []);

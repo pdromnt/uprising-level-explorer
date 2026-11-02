@@ -32,8 +32,8 @@ did not modify the game checkout or its assets.
 - Faction texture namespace with `bitmaps` fallback, mission-palette indexed BMPs,
   native physical row order, texel UV normalization and basic `trans*` cutouts.
 - Native 1/512 coordinate conversion, 2,048-step heading quantization with positive
-  Y rotation, model center-height grounding, and source-Y preservation for bomber
-  and AAV records. Scenery follows its subsequent native footprint-settling method:
+  Y rotation, model center-height grounding, native bomber flight-height allocation,
+  and source-Y preservation for AAV records. Scenery follows its subsequent native footprint-settling method:
   lowest center/rotated-corner sample plus vertical extent. This second stage was
   corrected on 2026-10-23 after the Centari floating-decor report. Terrain-conforming
   vehicle suspension is not simulated.

@@ -29,6 +29,10 @@ try {
   await page.locator("#loading").waitFor({ state: "hidden" });
   assert.equal(await page.locator("#welcome").isVisible(), true);
   assert.equal(await page.locator(".welcome-card h1").innerText(),"Explore the Worlds");
+  const tankProbe=await build({entryPoints:[path.join(root,"tests/tank-gpu.ts")],bundle:true,write:false,format:"iife",platform:"browser"});
+  await page.evaluate(tankProbe.outputFiles[0].text);
+  const tankResult=await page.evaluate(()=>window.probeTankMode());
+  assert.deepEqual(tankResult.checks,Array(13).fill(true));
   await page.waitForFunction(()=>Array.from(document.fonts).filter(f=>f.status==='loaded').length===3);
   assert.equal(await page.locator("body").evaluate(e=>e.classList.contains('game-typography')),true,"Bundled fonts style the welcome screen before a game is selected");
   await page.screenshot({path:path.join(root,"artifacts","viewer-welcome-fonts.png")});
@@ -372,6 +376,19 @@ try {
     assert.equal(await page.locator('[data-camera="tank"]').getAttribute("class"),"active","Tank mode follows mission switches to the new player start");
   }
   console.log("PASS: Tank driving, steering/look/zoom, reset, both relocation actions, mission switches and parked-state reloads.");
+  for(const mode of ["orbit","fly","top"]) {
+    await page.locator('[data-camera="tank"]').click();
+    await page.locator(`[data-camera="${mode}"]`).click();
+    await page.locator("#object-search").fill("tank");
+    await page.locator(".object-row").first().click();
+    await page.locator("#focus").click();
+    await page.locator("#deselect").click();
+    await page.waitForTimeout(150);
+    const bounds=await page.locator("canvas").boundingBox();
+    await page.mouse.click(bounds.x+bounds.width/2,bounds.y+bounds.height/2);
+    assert.equal(await page.locator("#selection").isVisible(),true,`${mode} model picking works after leaving Tank mode`);
+  }
+  console.log("PASS: actual model clicks in Orbit, Fly and Top after leaving Tank mode.");
   await page.locator("[data-camera=fly]").click();
   assert.equal(await page.locator("#tank-controls").isVisible(),false);
   const beforeFlight = await page.locator("#coordinates").innerText();

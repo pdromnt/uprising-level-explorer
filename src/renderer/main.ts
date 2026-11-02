@@ -299,7 +299,7 @@ function select(id: number, focus = false) {
     [
       ["Type", kindName(o.kind)],
       ["Owner", ownerLabel(o.owner)],
-      ["Position (x, z, y)", `${o.x}, ${o.z}, ${o.y}`],
+      ["Map position (x, z, y)", `${o.x}, ${o.z}, ${o.y}`],
       ["Heading", `${o.heading}°`],
       ["Parent", o.parent],
       ["Source", o.derived ? `${level.mission.mapFile} · ${o.derived.type} ${o.derived.index+1}` : o.citadel ? `${level.mission.mapFile} · citadel ${o.citadel.id+1}, ${o.citadel.slot ? `upgrade ${o.citadel.slot}` : "base"}` : `${level.mission.mapFile} @ ${o.sourceOffset}`],

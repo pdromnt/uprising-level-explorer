@@ -341,10 +341,17 @@ export function headingRadians(degrees: number) {
   return (steps * Math.PI) / 1024;
 }
 
+// 55a890/55ab20 replaces SLK Y with terrain + the shared altitude allocator.
+// Level startup initializes 63a2bc to 3500; each bomber reserves another 200.
+export function bomberSpawnHeight(terrainHeight:number,index=0) {
+  return Math.fround(Math.fround(terrainHeight*512)+Math.fround(3500+index*200))/512;
+}
+
 export function modelPose(
   object: Placement,
   model: BinaryModel,
   terrainHeight: number | ((x: number, z: number) => number),
+  bomberIndex=0,
 ) {
   const sample =
     typeof terrainHeight === "number" ? () => terrainHeight : terrainHeight;
@@ -383,7 +390,7 @@ export function modelPose(
   return {
     x: object.x,
     z: object.z,
-    y: airborne || object.derived?.rawY ? object.y : height,
+    y: object.kind===38 ? bomberSpawnHeight(sample(object.x,object.z),bomberIndex) : airborne || object.derived?.rawY ? object.y : height,
     heading: headingRadians(object.heading),
   };
 }

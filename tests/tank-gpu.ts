@@ -24,6 +24,20 @@ window.probeTankMode=()=>{
     let visible=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i]>150&&pixels[i+1]<100)visible++;
     map.filterObjects(()=>false);checks.push(map.tank!.group.visible);map.setMode("orbit");checks.push(!map.targets[0].visible&&!map.tank!.group.visible);
     map.filterObjects(()=>true);map.setMode("tank");map.setMode("orbit");checks.push(map.targets[0].visible);
+    // A click must still select the original model after leaving the driver.
+    for(const mode of ["orbit","fly","top"]) {
+      map.setMode("tank");map.pickDrive(true);map.setMode(mode);
+      const target=map.targets[0],center=new T.Box3().setFromObject(target).getCenter(new T.Vector3());
+      map.camera.position.copy(center).add(new T.Vector3(0,5,5));map.camera.lookAt(center);map.controls.target.copy(center);map.renderOnce();
+      let selected=-1;map.onSelect=id=>{selected=id;};
+      const r=host.getBoundingClientRect();
+      map.renderer.domElement.dispatchEvent(new MouseEvent("click",{clientX:r.left+r.width/2,clientY:r.top+r.height/2}));
+      checks.push(selected===start.id&&!map.pickingDrive);
+    }
+    const bomber={...start,id:1,kind:38,x:24,z:24,y:-20,derived:undefined};
+    map.load({...data,objects:[bomber,{...bomber,id:2,x:20}],modelSelections:{...data.modelSelections,1:data.modelSelections[start.id]}});
+    checks.push(map.targets.find(o=>o.userData.id===1)!.position.y===3500/512);
+    checks.push(map.targets.find(o=>o.userData.id===2)!.position.y===3700/512);
     map.driveHere(-100,10000);checks.push(map.mode==="tank"&&map.tank!.state.x>=.5&&map.tank!.state.x<2&&map.tank!.state.z<=31.5&&map.tank!.state.z>30);
     map.reset();checks.push(map.mode==="tank"&&map.tank!.state.x===8&&map.tank!.state.z===8);
     map.load({...data,derivedObjects:[],modelSelections:{}});map.setMode("tank");checks.push(map.mode==="orbit"&&!map.tank);
