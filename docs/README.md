@@ -23,6 +23,8 @@ history. The viewer is read-only; a game installation supplies its level assets.
   lighting, depth, waves and restored layered skies.
 - [Models and placement](models-and-placement.md): BDM layouts, catalogs,
   faction names, building types and ground contact.
+- [Factions and ownership](factions-and-ownership.md): player versus Native/Rabble
+  slots, Imperial ownership, and why static placements skew toward Native Forces.
 - [Rendering trace](rendering-path.md): the game's submission path and how it
   differs from the viewer's WebGL renderer.
 - [Scripts and briefings](scripts-and-briefing.md): readable text, encoding and
